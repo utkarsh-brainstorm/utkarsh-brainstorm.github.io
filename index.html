@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utkarsh Yadav — AI & Data Science</title>
+  <meta name="description" content="Portfolio of Utkarsh Yadav — AI and Data Science student at IIT Jodhpur building data-driven tools and Linux applications." />
+  <meta property="og:title" content="Utkarsh Yadav — AI & Data Science" />
+  <meta property="og:description" content="Student developer focused on data science, Python, and Linux systems." />
+  <meta property="og:image" content="profile_pic.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── CURSOR GLOW ── -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ── NOISE OVERLAY ── -->
+  <div class="noise"></div>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">UY<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-avatar-wrap" data-tilt>
+        <div class="hero-avatar-ring"></div>
+        <img src="profile_pic.jpeg" alt="Utkarsh Yadav" class="hero-avatar" id="heroAvatar" />
+        <div class="avatar-status">
+          <span class="status-dot"></span>
+          <span>Open to opportunities</span>
+        </div>
+      </div>
+      <div class="hero-text">
+        <div class="hero-tag">
+          <span class="tag-icon">⚡</span> AI &amp; Data Science
+        </div>
+        <h1 class="hero-name">
+          Utkarsh<br /><span class="accent">Yadav</span>
+        </h1>
+        <p class="hero-subtitle" id="typedText"></p>
+        <p class="hero-desc">
+          Student developer at <strong>IIT Jodhpur</strong> building data-driven tools and Linux applications. Passionate about turning complex problems into elegant solutions.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            View Projects <span class="btn-arrow">→</span>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-count="8">0</span><span class="stat-num">.5</span>
+            <span class="stat-label">CGPA</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="8">0</span><span class="stat-num">+</span>
+            <span class="stat-label">GitHub Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="2024">0</span>
+            <span class="stat-label">Batch Year</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="hero-scroll" aria-label="Scroll down">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll</span>
+    </a>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-label">01 / About</div>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">
+            I'm a 19-year-old student at <span class="highlight">IIT Jodhpur</span>, pursuing a BS in Applied AI and Data Science — shaping the future one dataset at a time.
+          </p>
+          <p>
+            My journey in tech started with curiosity and grew into building real, functional tools. From GNOME extensions that organize daily life, to Python utilities that automate the mundane — I love solving real problems with clean code.
+          </p>
+          <p>
+            I work primarily in <span class="highlight">Python</span> and live inside a <span class="highlight">Linux</span> environment, deeply familiar with the filesystem, shell scripting, and the ecosystem around it. When I'm not coding, I'm exploring new datasets or diving into open-source projects.
+          </p>
+          <div class="about-chips">
+            <span class="chip">🐍 Python Dev</span>
+            <span class="chip">🐧 Linux Power User</span>
+            <span class="chip">📊 Data Analyst</span>
+            <span class="chip">🤖 AI Enthusiast</span>
+          </div>
+        </div>
+        <div class="about-card-grid">
+          <div class="info-card" id="info-location">
+            <div class="info-card-icon">📍</div>
+            <div class="info-card-label">Location</div>
+            <div class="info-card-value">India</div>
+          </div>
+          <div class="info-card" id="info-edu">
+            <div class="info-card-icon">🎓</div>
+            <div class="info-card-label">Institution</div>
+            <div class="info-card-value">IIT Jodhpur</div>
+          </div>
+          <div class="info-card" id="info-cgpa">
+            <div class="info-card-icon">⭐</div>
+            <div class="info-card-label">CGPA</div>
+            <div class="info-card-value">8.5 / 10</div>
+          </div>
+          <div class="info-card" id="info-status">
+            <div class="info-card-icon">🚀</div>
+            <div class="info-card-label">Status</div>
+            <div class="info-card-value">Actively Learning</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section-label">02 / Skills</div>
+      <h2 class="section-title">Technical Arsenal</h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <span class="skill-category-icon">🧠</span>
+            <h3>Data Science</h3>
+          </div>
+          <div class="skill-pills">
+            <div class="skill-pill" data-level="80">
+              <span class="pill-name">Python</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:80%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="75">
+              <span class="pill-name">Pandas</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:75%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="70">
+              <span class="pill-name">NumPy</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:70%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="65">
+              <span class="pill-name">Scikit-learn</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:65%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="70">
+              <span class="pill-name">Seaborn / Matplotlib</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <span class="skill-category-icon">🐧</span>
+            <h3>Systems & Tools</h3>
+          </div>
+          <div class="skill-pills">
+            <div class="skill-pill" data-level="85">
+              <span class="pill-name">Linux Systems</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:85%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="75">
+              <span class="pill-name">Bash / Shell Scripting</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:75%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="70">
+              <span class="pill-name">Git / GitHub</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:70%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="60">
+              <span class="pill-name">GNOME Extension Dev (GJS)</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:60%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <span class="skill-category-icon">💡</span>
+            <h3>Concepts & Fundamentals</h3>
+          </div>
+          <div class="skill-pills">
+            <div class="skill-pill" data-level="70">
+              <span class="pill-name">Machine Learning Basics</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:70%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="65">
+              <span class="pill-name">Data Analysis & Visualization</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:65%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="60">
+              <span class="pill-name">JavaScript / HTML / CSS</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:60%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="55">
+              <span class="pill-name">REST APIs</span>
+              <div class="pill-bar"><div class="pill-fill" style="--w:55%"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-label">03 / Projects</div>
+      <h2 class="section-title">What I've Built</h2>
+      <p class="section-sub">A collection of personal tools, academic work, and open-source contributions.</p>
+
+      <div class="projects-grid">
+
+        <article class="project-card featured" id="proj-taskman">
+          <div class="project-card-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">📋</div>
+            <div class="project-badges">
+              <span class="badge badge-featured">Featured</span>
+              <span class="badge badge-lang">JavaScript</span>
+            </div>
+          </div>
+          <h3 class="project-title">TaskMan</h3>
+          <p class="project-desc">A calendar-integrated daily task manager and reminder system for the GNOME panel. Visualises task load and completion with dynamic colour coding. Supports timed reminders with Snooze and Dismiss notifications.</p>
+          <div class="project-tags">
+            <span class="tag">GNOME Extension</span>
+            <span class="tag">GJS</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Productivity</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/utkarsh-brainstorm/TaskMan" target="_blank" rel="noopener" class="project-link">
+              View on GitHub <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card" id="proj-habitshaper">
+          <div class="project-card-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🔄</div>
+            <div class="project-badges">
+              <span class="badge badge-lang">JavaScript</span>
+            </div>
+          </div>
+          <h3 class="project-title">HabitShaper</h3>
+          <p class="project-desc">A habit tracking application designed to help build and maintain daily routines. Focuses on long-term progress visualization and consistency tracking.</p>
+          <div class="project-tags">
+            <span class="tag">Productivity</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Self-improvement</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/utkarsh-brainstorm/HabitShaper" target="_blank" rel="noopener" class="project-link">
+              View on GitHub <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card" id="proj-inkstrokes">
+          <div class="project-card-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🎨</div>
+            <div class="project-badges">
+              <span class="badge badge-lang">JavaScript</span>
+              <span class="badge badge-ai">AI Powered</span>
+            </div>
+          </div>
+          <h3 class="project-title">InkStrokes</h3>
+          <p class="project-desc">Artistic Progress Tracker with AI-powered feedback. Tracks artistic growth over time and provides intelligent insights to help artists improve their craft.</p>
+          <div class="project-tags">
+            <span class="tag">AI</span>
+            <span class="tag">Creative Tools</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/utkarsh-brainstorm/InkStrokes" target="_blank" rel="noopener" class="project-link">
+              View on GitHub <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card" id="proj-htm2pdf">
+          <div class="project-card-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">📄</div>
+            <div class="project-badges">
+              <span class="badge badge-lang">Python</span>
+            </div>
+          </div>
+          <h3 class="project-title">Htm2pdf</h3>
+          <p class="project-desc">A Python utility that converts HTML documents to PDF format. A practical tool built to streamline document workflows and eliminate manual conversion steps.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">CLI Tool</span>
+            <span class="tag">Automation</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/utkarsh-brainstorm/Htm2pdf" target="_blank" rel="noopener" class="project-link">
+              View on GitHub <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card" id="proj-pdfoops">
+          <div class="project-card-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🔧</div>
+            <div class="project-badges">
+              <span class="badge badge-lang">Python</span>
+            </div>
+          </div>
+          <h3 class="project-title">PDF_OOPS</h3>
+          <p class="project-desc">A Python-based PDF manipulation tool. Built to handle common PDF operations that otherwise require expensive or clunky software — keeping things simple and open.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">PDF Tools</span>
+            <span class="tag">Utility</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/utkarsh-brainstorm/PDF_OOPS" target="_blank" rel="noopener" class="project-link">
+              View on GitHub <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card" id="proj-curriculum">
+          <div class="project-card-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">📊</div>
+            <div class="project-badges">
+              <span class="badge badge-lang">Python</span>
+              <span class="badge badge-academic">Academic</span>
+            </div>
+          </div>
+          <h3 class="project-title">Data Analytics Projects</h3>
+          <p class="project-desc">Curriculum-based data analytics projects at IIT Jodhpur. Applying Pandas, NumPy, Seaborn, and Scikit-learn to real-world datasets — exploratory analysis, visualization, and ML modelling.</p>
+          <div class="project-tags">
+            <span class="tag">Pandas</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Seaborn</span>
+            <span class="tag">EDA</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/utkarsh-brainstorm" target="_blank" rel="noopener" class="project-link">
+              View GitHub <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="projects-cta">
+        <a href="https://github.com/utkarsh-brainstorm" target="_blank" rel="noopener" class="btn btn-primary" id="github-all">
+          All Projects on GitHub <span class="btn-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section class="section education-section" id="education">
+    <div class="container">
+      <div class="section-label">04 / Education</div>
+      <h2 class="section-title">Academic Journey</h2>
+
+      <div class="timeline">
+        <div class="timeline-item active" id="edu-iitj">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div class="timeline-logo">🏛️</div>
+              <div>
+                <div class="timeline-period">2024 — 2028</div>
+                <span class="timeline-status">Ongoing · Feb 2026</span>
+              </div>
+            </div>
+            <h3 class="timeline-title">BS in Applied AI &amp; Data Science</h3>
+            <div class="timeline-institution">Indian Institute of Technology Jodhpur</div>
+            <p class="timeline-desc">
+              Pursuing a rigorous four-year programme covering machine learning, statistical analysis, data engineering, and applied AI. Balanced coursework with independent hobby projects to build practical engineering skills beyond the classroom.
+            </p>
+            <div class="timeline-highlights">
+              <div class="highlight-item">
+                <span class="highlight-icon">⭐</span>
+                <span>CGPA <strong>8.5</strong> (as of Feb 2026)</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-icon">📚</span>
+                <span>Applied AI, Data Science, ML Fundamentals</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-icon">🛠️</span>
+                <span>Independent Projects alongside coursework</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-label">05 / Contact</div>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-sub">Open to collaborations, internships, or just a good technical conversation.</p>
+
+      <div class="contact-grid">
+
+        <a href="mailto:utkarshy.work@gmail.com" class="contact-card" id="contact-email">
+          <div class="contact-card-icon">✉️</div>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value">utkarshy.work@gmail.com</div>
+          <div class="contact-card-arrow">→</div>
+        </a>
+
+        <a href="https://linkedin.com/in/utkarsh-rwx" target="_blank" rel="noopener" class="contact-card" id="contact-linkedin">
+          <div class="contact-card-icon">💼</div>
+          <div class="contact-card-label">LinkedIn</div>
+          <div class="contact-card-value">utkarsh-rwx</div>
+          <div class="contact-card-arrow">→</div>
+        </a>
+
+        <a href="https://github.com/utkarsh-brainstorm" target="_blank" rel="noopener" class="contact-card" id="contact-github">
+          <div class="contact-card-icon">🐙</div>
+          <div class="contact-card-label">GitHub</div>
+          <div class="contact-card-value">utkarsh-brainstorm</div>
+          <div class="contact-card-arrow">→</div>
+        </a>
+
+        <a href="tel:+919917393781" class="contact-card" id="contact-phone">
+          <div class="contact-card-icon">📞</div>
+          <div class="contact-card-label">Phone</div>
+          <div class="contact-card-value">+91 99173 93781</div>
+          <div class="contact-card-arrow">→</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">UY<span class="dot">.</span></div>
+        <p class="footer-copy">© 2026 Utkarsh Yadav. Built with ❤️ and vanilla code.</p>
+        <div class="footer-links">
+          <a href="https://github.com/utkarsh-brainstorm" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/utkarsh-rwx" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
