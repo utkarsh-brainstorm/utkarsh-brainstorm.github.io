@@ -1,15 +1,37 @@
-// ── CURSOR GLOW ──
-const glow = document.getElementById('cursorGlow');
-document.addEventListener('mousemove', e => {
-  glow.style.left = e.clientX + 'px';
-  glow.style.top  = e.clientY + 'px';
+// ── THEME TOGGLE ──
+const html = document.documentElement;
+const toggle = document.getElementById('themeToggle');
+const saved = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', saved);
+
+toggle.addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
 });
+
+// ── CUSTOM CURSOR ──
+const cursor = document.getElementById('cursor');
+const trail = document.getElementById('cursorTrail');
+let mx = 0, my = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top  = my + 'px';
+});
+// Lag trail
+setInterval(() => {
+  if (trail) {
+    trail.style.left = mx + 'px';
+    trail.style.top  = my + 'px';
+  }
+}, 60);
 
 // ── NAV SCROLL ──
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
 
 // ── MOBILE MENU ──
 const burger = document.getElementById('burger');
@@ -20,57 +42,52 @@ mobileMenu.querySelectorAll('a').forEach(a =>
 );
 
 // ── TYPED TEXT ──
-const phrases = [
-  'Building ML-powered tools.',
-  'Python & Linux enthusiast.',
-  'IIT Jodhpur, Batch of 2028.',
-  'Turning data into insights.',
-];
-let pi = 0, ci = 0, deleting = false;
-const el = document.getElementById('typedText');
+const phrases = ['Building ML-powered tools.', 'Python & Linux enthusiast.', 'IIT Jodhpur · Batch of 2028.', 'Turning data into insights.'];
+let pi = 0, ci = 0, del = false;
+const typed = document.getElementById('typedText');
 function type() {
   const cur = phrases[pi];
-  el.textContent = deleting ? cur.slice(0, ci--) : cur.slice(0, ci++);
-  if (!deleting && ci > cur.length) { deleting = true; setTimeout(type, 1400); return; }
-  if (deleting && ci < 0) { deleting = false; pi = (pi + 1) % phrases.length; ci = 0; }
-  setTimeout(type, deleting ? 45 : 80);
+  typed.textContent = del ? cur.slice(0, ci--) : cur.slice(0, ci++);
+  if (!del && ci > cur.length) { del = true; setTimeout(type, 1600); return; }
+  if (del && ci < 0) { del = false; pi = (pi + 1) % phrases.length; ci = 0; }
+  setTimeout(type, del ? 40 : 85);
 }
 type();
 
 // ── COUNT-UP ──
-function countUp(el, target, duration = 1600) {
+function countUp(el, target, dur = 1400) {
   const start = performance.now();
-  const update = now => {
-    const p = Math.min((now - start) / duration, 1);
-    const ease = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.round(ease * target);
-    if (p < 1) requestAnimationFrame(update);
+  const run = now => {
+    const p = Math.min((now - start) / dur, 1);
+    const e = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(e * target);
+    if (p < 1) requestAnimationFrame(run);
   };
-  requestAnimationFrame(update);
+  requestAnimationFrame(run);
 }
 
 // ── INTERSECTION OBSERVER ──
-const revealEls = document.querySelectorAll('.project-card, .skill-category, .info-card, .contact-card, .timeline-card');
-// Add reveal only to non-hero elements
-revealEls.forEach(el => el.classList.add('reveal'));
+const revealTargets = document.querySelectorAll(
+  '.project-row, .skill-group, .info-item, .contact-row, .edu-card, .about-chips, .about-info-row, .hero-right'
+);
+revealTargets.forEach(el => el.classList.add('reveal'));
 
-const io = new IntersectionObserver((entries) => {
+const io = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     entry.target.classList.add('visible');
     io.unobserve(entry.target);
-    // Trigger skill bars
-    entry.target.querySelectorAll('.pill-fill').forEach(bar => bar.classList.add('animated'));
-    // Trigger count-up on stat numbers
-    entry.target.querySelectorAll('[data-count]').forEach(el => {
-      countUp(el, parseInt(el.dataset.count));
-    });
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
-revealEls.forEach(el => io.observe(el));
+revealTargets.forEach(el => io.observe(el));
 
-// Also observe hero stats individually
+// Stagger project rows
+document.querySelectorAll('.project-row').forEach((row, i) => {
+  row.style.transitionDelay = `${i * 60}ms`;
+});
+
+// ── COUNT-UP FOR STATS ──
 document.querySelectorAll('[data-count]').forEach(el => {
   const statIo = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
@@ -81,30 +98,28 @@ document.querySelectorAll('[data-count]').forEach(el => {
   statIo.observe(el);
 });
 
-// ── TILT ON AVATAR ──
-const avatar = document.querySelector('[data-tilt]');
-if (avatar) {
-  avatar.addEventListener('mousemove', e => {
-    const r = avatar.getBoundingClientRect();
-    const x = ((e.clientX - r.left) / r.width  - 0.5) * 15;
-    const y = ((e.clientY - r.top)  / r.height - 0.5) * 15;
-    avatar.style.transform = `perspective(600px) rotateY(${x}deg) rotateX(${-y}deg)`;
+// ── AVATAR TILT ──
+const frame = document.querySelector('[data-tilt]');
+if (frame) {
+  frame.addEventListener('mousemove', e => {
+    const r = frame.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width  - 0.5) * 10;
+    const y = ((e.clientY - r.top)  / r.height - 0.5) * 10;
+    frame.style.transform = `perspective(600px) rotateY(${x}deg) rotateX(${-y}deg)`;
   });
-  avatar.addEventListener('mouseleave', () => {
-    avatar.style.transform = '';
-  });
+  frame.addEventListener('mouseleave', () => { frame.style.transform = ''; });
 }
 
-// ── ACTIVE NAV HIGHLIGHT ──
+// ── ACTIVE NAV ──
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-const sectIo = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(a => a.classList.remove('active'));
-      const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-      if (active) active.classList.add('active');
+const navAs = document.querySelectorAll('.nav-links a');
+const secIo = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navAs.forEach(a => a.style.color = '');
+      const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (a) a.style.color = 'var(--text)';
     }
   });
-}, { threshold: 0.5 });
-sections.forEach(s => sectIo.observe(s));
+}, { threshold: 0.45 });
+sections.forEach(s => secIo.observe(s));
