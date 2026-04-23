@@ -233,7 +233,7 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { width: 5
   display: flex; align-items: center; gap: 1rem;
   margin-bottom: 3rem;
 }
-.section-num { font-family: var(--font-serif); font-size: 0.85rem; color: var(--text3); font-style: italic; }
+.section-num { font-family: var(--font-serif); font-size: 1.28rem; color: var(--text3); font-style: italic; }
 .section-rule { flex: 0 0 40px; height: 1px; background: var(--border-strong); }
 .section-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text3); font-weight: 400; }
 .section-title {
@@ -291,13 +291,13 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { width: 5
   display: grid; grid-template-columns: 52px 1fr 32px;
   gap: 2rem; align-items: start;
   padding: 2rem 0; border-top: 1px solid var(--border);
-  transition: background 0.2s, padding-left 0.2s;
+  transition: padding-left 0.35s cubic-bezier(0.4,0,0.2,1);
   cursor: pointer;
 }
 .project-row:last-child { border-bottom: 1px solid var(--border); }
 .project-row:hover { padding-left: 1rem; }
 .project-row-num {
-  font-family: var(--font-serif); font-size: 0.85rem; color: var(--text3);
+  font-family: var(--font-serif); font-size: 1.28rem; color: var(--text3);
   font-style: italic; padding-top: 0.25rem;
 }
 .project-row-top { display: flex; align-items: baseline; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
@@ -307,12 +307,28 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { width: 5
   font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--text3); padding: 0.15rem 0.6rem; border: 1px solid var(--border);
 }
+.tag-vibe {
+  font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text2); padding: 0.15rem 0.6rem;
+  border: 1px solid var(--border-strong);
+  font-style: italic;
+}
 .project-row-desc { font-size: 0.88rem; color: var(--text2); line-height: 1.7; }
 .project-row-arrow {
   font-size: 1.2rem; color: var(--text3); padding-top: 0.2rem;
-  transition: transform 0.2s, color 0.2s;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), color 0.2s;
 }
 .project-row:hover .project-row-arrow { transform: translate(4px,-4px); color: var(--text); }
+.project-row-arrow .link-preview {
+  display: none; position: absolute; bottom: calc(100% + 8px); right: 0;
+  background: var(--text); color: var(--bg);
+  font-size: 0.72rem; white-space: nowrap; padding: 0.4rem 0.8rem;
+  pointer-events: none; z-index: 50;
+  font-family: var(--font-sans); font-style: normal; letter-spacing: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.project-row:hover .project-row-arrow .link-preview { display: block; }
 .projects-cta { margin-top: 2rem; }
 
 /* ── EDUCATION ── */
@@ -343,7 +359,7 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { width: 5
 .contact-row {
   display: flex; align-items: center; gap: 2rem;
   padding: 1.5rem 0; border-top: 1px solid var(--border);
-  transition: padding-left 0.2s;
+  transition: padding-left 0.35s cubic-bezier(0.4,0,0.2,1);
 }
 .contact-row:last-child { border-bottom: 1px solid var(--border); }
 .contact-row:hover { padding-left: 1rem; }
@@ -352,8 +368,20 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { width: 5
   color: var(--text3); min-width: 80px; font-weight: 400;
 }
 .contact-row-val { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400; flex: 1; }
-.contact-row-arrow { color: var(--text3); font-size: 1.1rem; transition: transform 0.2s, color 0.2s; }
+.contact-row-arrow {
+  color: var(--text3); font-size: 1.1rem; position: relative;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), color 0.2s;
+}
 .contact-row:hover .contact-row-arrow { transform: translate(4px,-4px); color: var(--text); }
+.contact-row-arrow .link-preview {
+  display: none; position: absolute; bottom: calc(100% + 8px); right: 0;
+  background: var(--text); color: var(--bg);
+  font-size: 0.72rem; white-space: nowrap; padding: 0.4rem 0.8rem;
+  pointer-events: none; z-index: 50;
+  font-family: var(--font-sans); letter-spacing: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.contact-row:hover .contact-row-arrow .link-preview { display: block; }
 
 /* ── FOOTER ── */
 .footer { padding: 2rem 2.5rem; border-top: 1px solid var(--border); background: var(--bg); }
