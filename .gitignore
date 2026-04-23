@@ -1,0 +1,28 @@
+# ── Deploy script (local only, never push) ──
+deploy.sh
+
+# ── Environment & secrets ──
+.env
+.env.*
+*.secret
+*.key
+
+# ── OS junk ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor metadata ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Logs & temp ──
+*.log
+tmp/
+temp/
+
+# ── Node (if ever used) ──
+node_modules/
