@@ -50,7 +50,8 @@ function countUp(el, target, duration = 1600) {
 }
 
 // ── INTERSECTION OBSERVER ──
-const revealEls = document.querySelectorAll('.section, .project-card, .skill-category, .info-card, .contact-card, .timeline-card');
+const revealEls = document.querySelectorAll('.project-card, .skill-category, .info-card, .contact-card, .timeline-card');
+// Add reveal only to non-hero elements
 revealEls.forEach(el => el.classList.add('reveal'));
 
 const io = new IntersectionObserver((entries) => {
@@ -65,7 +66,7 @@ const io = new IntersectionObserver((entries) => {
       countUp(el, parseInt(el.dataset.count));
     });
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
 revealEls.forEach(el => io.observe(el));
 

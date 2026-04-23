@@ -393,6 +393,11 @@ img { max-width: 100%; display: block; }
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* Fallback: if JS hasn't run, show everything */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero-content { flex-direction: column; gap: 3rem; text-align: center; }
