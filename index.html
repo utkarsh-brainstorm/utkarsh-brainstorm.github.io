@@ -33,6 +33,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#education">Education</a></li>
+        <li><a href="#certificates">Certs</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-right">
@@ -51,6 +52,7 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#education">Education</a>
+      <a href="#certificates">Certificates</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -418,11 +420,44 @@
     </div>
   </section>
 
-  <!-- ── CONTACT ── -->
-  <section class="section contact-section" id="contact">
+  <!-- ── CERTIFICATES ── -->
+  <section class="section certs-section" id="certificates">
     <div class="container">
       <div class="section-meta">
         <span class="section-num">05</span>
+        <span class="section-rule"></span>
+        <span class="section-label">Certificates &amp; Experience</span>
+      </div>
+      <h2 class="section-title">Recognition &amp;<br /><em>Experience.</em></h2>
+      <p class="section-sub">Certifications, hackathons, and workshops I've participated in.</p>
+      <div class="certs-gallery" id="certsGallery">
+        <!-- Populated dynamically from cert_exp/manifest.json -->
+        <div class="certs-loading">Loading certificates…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CERT LIGHTBOX ── -->
+  <div class="cert-lightbox" id="certLightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+    <div class="cert-lightbox-backdrop" id="certLightboxBackdrop"></div>
+    <div class="cert-lightbox-inner">
+      <button class="cert-lightbox-close" id="certLightboxClose" aria-label="Close">✕</button>
+      <img class="cert-lightbox-img" id="certLightboxImg" src="" alt="" />
+      <div class="cert-lightbox-footer">
+        <span class="cert-lightbox-name" id="certLightboxName"></span>
+        <a class="cert-lightbox-dl" id="certLightboxDl" href="" download aria-label="Download certificate">
+          ↓ Download
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTACT ── -->
+
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-meta">
+        <span class="section-num">06</span>
         <span class="section-rule"></span>
         <span class="section-label">Contact</span>
       </div>

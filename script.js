@@ -123,3 +123,83 @@ const secIo = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.45 });
 sections.forEach(s => secIo.observe(s));
+
+// ── CERTIFICATES GALLERY ──
+(async () => {
+  const gallery  = document.getElementById('certsGallery');
+  const lightbox = document.getElementById('certLightbox');
+  const lbImg    = document.getElementById('certLightboxImg');
+  const lbName   = document.getElementById('certLightboxName');
+  const lbDl     = document.getElementById('certLightboxDl');
+  const lbClose  = document.getElementById('certLightboxClose');
+  const lbBack   = document.getElementById('certLightboxBackdrop');
+
+  function openLightbox(src, name) {
+    lbImg.src = src;
+    lbImg.alt = name;
+    lbName.textContent = name;
+    lbDl.href = src;
+    lbDl.download = src.split('/').pop();
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    // Clear src after transition so it doesn't flash on next open
+    setTimeout(() => { lbImg.src = ''; }, 350);
+  }
+  lbClose.addEventListener('click', closeLightbox);
+  lbBack.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  try {
+    const res = await fetch('cert_exp/manifest.json');
+    if (!res.ok) throw new Error('manifest not found');
+    const certs = await res.json();
+
+    if (!certs.length) {
+      gallery.innerHTML = '<p class="certs-loading">No certificates found.</p>';
+      return;
+    }
+
+    const grid = document.createElement('div');
+    grid.className = 'certs-grid';
+
+    certs.forEach((cert, i) => {
+      const src  = `cert_exp/${cert.file}`;
+      const name = cert.name;
+
+      const card = document.createElement('div');
+      card.className = 'cert-card reveal';
+      card.style.transitionDelay = `${i * 70}ms`;
+
+      card.innerHTML = `
+        <div class="cert-card-img-wrap">
+          <img class="cert-card-img" src="${src}" alt="${name}" loading="lazy" />
+        </div>
+        <div class="cert-card-footer">
+          <span class="cert-card-name">${name}</span>
+          <a class="cert-card-dl" href="${src}" download="${cert.file}"
+             title="Download" aria-label="Download ${name}">↓ DL</a>
+        </div>
+      `;
+
+      // Click on image area → lightbox; click on DL → native download (stop propagation)
+      card.querySelector('.cert-card-img-wrap').addEventListener('click', () => openLightbox(src, name));
+      card.querySelector('.cert-card-dl').addEventListener('click', e => e.stopPropagation());
+
+      grid.appendChild(card);
+    });
+
+    gallery.innerHTML = '';
+    gallery.appendChild(grid);
+
+    // Hook new cards into reveal observer
+    grid.querySelectorAll('.cert-card').forEach(el => io.observe(el));
+
+  } catch (err) {
+    gallery.innerHTML = `<p class="certs-loading">Could not load certificates. (${err.message})</p>`;
+    console.warn('Certs:', err);
+  }
+})();
