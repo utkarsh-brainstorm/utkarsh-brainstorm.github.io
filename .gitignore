@@ -1,5 +1,6 @@
-# ── Deploy script (local only, never push) ──
+# ── Local scripts (never push) ──
 deploy.sh
+make_thumbs.sh
 
 # ── Environment & secrets ──
 .env

@@ -134,72 +134,99 @@ sections.forEach(s => secIo.observe(s));
   const lbClose  = document.getElementById('certLightboxClose');
   const lbBack   = document.getElementById('certLightboxBackdrop');
 
-  function openLightbox(src, name) {
-    lbImg.src = src;
-    lbImg.alt = name;
+  // ── Lightbox open/close ──
+  function openLightbox(fullSrc, name) {
+    // Show name immediately; start loading full-res image
     lbName.textContent = name;
-    lbDl.href = src;
-    lbDl.download = src.split('/').pop();
+    lbImg.alt = name;
+    lbImg.src = '';                   // clear previous
+    lbDl.href = fullSrc;
+    lbDl.download = fullSrc.split('/').pop();
+
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
+
+    // Load full-res only now
+    const tmp = new window.Image();
+    tmp.onload = () => { lbImg.src = fullSrc; };
+    tmp.src = fullSrc;
   }
+
   function closeLightbox() {
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
-    // Clear src after transition so it doesn't flash on next open
     setTimeout(() => { lbImg.src = ''; }, 350);
   }
+
   lbClose.addEventListener('click', closeLightbox);
   lbBack.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
+  // ── Fetch manifest ──
+  // Works on GitHub Pages (https) and local dev servers (http).
+  // fetch() does NOT work on file:// — run a local server or use deploy.sh.
+  let certs = [];
   try {
     const res = await fetch('cert_exp/manifest.json');
-    if (!res.ok) throw new Error('manifest not found');
-    const certs = await res.json();
-
-    if (!certs.length) {
-      gallery.innerHTML = '<p class="certs-loading">No certificates found.</p>';
-      return;
-    }
-
-    const grid = document.createElement('div');
-    grid.className = 'certs-grid';
-
-    certs.forEach((cert, i) => {
-      const src  = `cert_exp/${cert.file}`;
-      const name = cert.name;
-
-      const card = document.createElement('div');
-      card.className = 'cert-card reveal';
-      card.style.transitionDelay = `${i * 70}ms`;
-
-      card.innerHTML = `
-        <div class="cert-card-img-wrap">
-          <img class="cert-card-img" src="${src}" alt="${name}" loading="lazy" />
-        </div>
-        <div class="cert-card-footer">
-          <span class="cert-card-name">${name}</span>
-          <a class="cert-card-dl" href="${src}" download="${cert.file}"
-             title="Download" aria-label="Download ${name}">↓ DL</a>
-        </div>
-      `;
-
-      // Click on image area → lightbox; click on DL → native download (stop propagation)
-      card.querySelector('.cert-card-img-wrap').addEventListener('click', () => openLightbox(src, name));
-      card.querySelector('.cert-card-dl').addEventListener('click', e => e.stopPropagation());
-
-      grid.appendChild(card);
-    });
-
-    gallery.innerHTML = '';
-    gallery.appendChild(grid);
-
-    // Hook new cards into reveal observer
-    grid.querySelectorAll('.cert-card').forEach(el => io.observe(el));
-
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    certs = await res.json();
   } catch (err) {
-    gallery.innerHTML = `<p class="certs-loading">Could not load certificates. (${err.message})</p>`;
-    console.warn('Certs:', err);
+    gallery.innerHTML = `<p class="certs-loading">
+      Could not load certificates.<br>
+      <small>If viewing locally, open via a server: <code>python3 -m http.server</code></small>
+    </p>`;
+    console.warn('Certs manifest fetch failed:', err);
+    return;
   }
+
+  if (!certs.length) {
+    gallery.innerHTML = '<p class="certs-loading">No certificates found.</p>';
+    return;
+  }
+
+  // ── Build grid ──
+  const grid = document.createElement('div');
+  grid.className = 'certs-grid';
+
+  certs.forEach((cert, i) => {
+    const thumbSrc = `cert_exp/${cert.thumb}`;   // small thumbnail shown in gallery
+    const fullSrc  = `cert_exp/${cert.file}`;    // full-res loaded only on click
+    const name     = cert.name;
+
+    const card = document.createElement('div');
+    card.className = 'cert-card reveal';
+    card.style.transitionDelay = `${i * 70}ms`;
+
+    card.innerHTML = `
+      <div class="cert-card-img-wrap">
+        <img class="cert-card-img"
+             src="${thumbSrc}"
+             alt="${name}"
+             loading="lazy"
+             decoding="async" />
+      </div>
+      <div class="cert-card-footer">
+        <span class="cert-card-name">${name}</span>
+        <a class="cert-card-dl"
+           href="${fullSrc}"
+           download="${cert.file}"
+           title="Download full certificate"
+           aria-label="Download ${name}">↓ DL</a>
+      </div>
+    `;
+
+    // Image area → lightbox (loads full-res on demand)
+    card.querySelector('.cert-card-img-wrap').addEventListener('click', () => openLightbox(fullSrc, name));
+    // DL button → native download, don't bubble to lightbox
+    card.querySelector('.cert-card-dl').addEventListener('click', e => e.stopPropagation());
+
+    grid.appendChild(card);
+  });
+
+  gallery.innerHTML = '';
+  gallery.appendChild(grid);
+
+  // Plug new cards into the existing reveal IntersectionObserver
+  grid.querySelectorAll('.cert-card').forEach(el => io.observe(el));
 })();
+
