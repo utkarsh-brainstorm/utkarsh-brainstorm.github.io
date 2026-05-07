@@ -450,7 +450,8 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { width: 5
 }
 .cert-card:hover .cert-card-img {
   filter: grayscale(0%) contrast(1);
-  transform: scale(1.03);
+  /* No scale here — scaling inside a clipped container crops the image.
+     The card itself lifts via translateY(-6px) scale(1.012) which looks great. */
 }
 .cert-card-footer {
   padding: 0.75rem 1rem;
@@ -513,7 +514,30 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { width: 5
   display: block;
   filter: grayscale(0%) contrast(1);
   background: #111;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
+.cert-lightbox-img.loaded { opacity: 1; }
+
+/* Spinner shown while full-res image is loading */
+.cert-lightbox-spinner {
+  position: absolute;
+  inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+  background: #111;
+  transition: opacity 0.3s ease;
+}
+.cert-lightbox-spinner.hidden { opacity: 0; }
+.cert-lightbox-spinner::after {
+  content: '';
+  width: 36px; height: 36px;
+  border: 2px solid rgba(255,255,255,0.12);
+  border-top-color: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  animation: lb-spin 0.75s linear infinite;
+}
+@keyframes lb-spin { to { transform: rotate(360deg); } }
 .cert-lightbox-footer {
   display: flex; align-items: center; justify-content: space-between;
   padding: 0.9rem 1.2rem;

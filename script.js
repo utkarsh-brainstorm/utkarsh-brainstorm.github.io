@@ -134,28 +134,48 @@ sections.forEach(s => secIo.observe(s));
   const lbClose  = document.getElementById('certLightboxClose');
   const lbBack   = document.getElementById('certLightboxBackdrop');
 
+  const lbSpinner = document.getElementById('certLightboxSpinner');
+
   // ── Lightbox open/close ──
   function openLightbox(fullSrc, name) {
-    // Show name immediately; start loading full-res image
     lbName.textContent = name;
     lbImg.alt = name;
-    lbImg.src = '';                   // clear previous
+    lbImg.src = '';
+    lbImg.classList.remove('loaded');   // hide image (opacity: 0)
+    lbSpinner.classList.remove('hidden'); // show spinner
+
     lbDl.href = fullSrc;
     lbDl.download = fullSrc.split('/').pop();
 
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
 
-    // Load full-res only now
+    // Load full-res only now — reveal on load
     const tmp = new window.Image();
-    tmp.onload = () => { lbImg.src = fullSrc; };
+    tmp.onload = () => {
+      lbImg.src = fullSrc;
+      // Give browser one frame to paint, then fade in
+      requestAnimationFrame(() => {
+        lbImg.classList.add('loaded');
+        lbSpinner.classList.add('hidden');
+      });
+    };
+    tmp.onerror = () => {
+      lbSpinner.classList.add('hidden');
+      lbImg.src = fullSrc;             // try direct anyway
+      lbImg.classList.add('loaded');
+    };
     tmp.src = fullSrc;
   }
 
   function closeLightbox() {
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
-    setTimeout(() => { lbImg.src = ''; }, 350);
+    setTimeout(() => {
+      lbImg.src = '';
+      lbImg.classList.remove('loaded');
+      lbSpinner.classList.remove('hidden');
+    }, 350);
   }
 
   lbClose.addEventListener('click', closeLightbox);
