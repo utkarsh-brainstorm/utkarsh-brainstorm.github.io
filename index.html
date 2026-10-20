@@ -104,15 +104,16 @@ nav button:hover .dial-tooltip,nav button:focus-visible .dial-tooltip{opacity:1;
 @media(max-height:620px) and (min-width:900px){nav{gap:5px}nav button{width:42px;height:42px}.dial-icon{width:16px;height:16px}}
 @media(prefers-reduced-motion:reduce){.c,nav button,.dial-icon{transition-duration:.01ms}.cue,.pulse{animation:none}}
 @media(max-width:899px){
-:root{--sz:36px;--p:20px;--q:20px}
+:root{--sz:36px;--p:20px;--q:20px;--mobile-dial-gap:28px}
 html,body{font-size:14px}
-.page{width:100%;height:calc(50% - 24px)}.L{top:0;bottom:auto}.R{bottom:0;top:auto}.page::after,.fo,.x{display:none}
+.page{width:100%;height:calc(50% - var(--mobile-dial-gap))}.L{top:0;bottom:auto}.R{bottom:0;top:auto}.page::after,.fo,.x{display:none}
 .track,.R .track{flex-direction:row;width:auto;height:var(--sh)}.R .track{flex-direction:row-reverse}
 .sp,.R .sp{padding:12px 20px;overflow:hidden}.L .sp{padding-top:max(12px,env(safe-area-inset-top))}.R .sp{padding-bottom:max(12px,env(safe-area-inset-bottom))}
 .c{gap:8px}h1{font-size:3.2rem}h2{font-size:1.6rem}.big{font-size:2.8rem}.lede{font-size:1.15rem}ul.l{gap:.3em}.row{padding:.5rem 0}
 .sp.project-sp .c{padding:12px;border-radius:12px}.project-gallery{gap:6px}.project-thumb{border-radius:8px}.project-card .project-desc{font-size:.78em}.project-gallery-footer{font-size:.56rem}.semester-grid{gap:6px}.semester-card{padding:8px}.semester-card p{font-size:.66rem}.semester-head h3{font-size:.58rem}.semester-head span{font-size:.57rem}.cert-grid{gap:6px}.cert-card img{padding:4px}.cert-card span{font-size:.56rem;padding:5px;min-height:30px}.experience-list{gap:7px}.experience-item{padding:8px}
 .seam{left:0;right:0;top:50%;bottom:auto;width:auto;height:1px}
-nav{left:0;width:100%;top:calc(50% - 24px);transform:none;height:48px;flex-direction:row;justify-content:center;align-items:center;gap:7px;background:var(--pl)}nav::before{top:50%;bottom:auto;left:7%;right:7%;width:auto;height:1px;background:linear-gradient(90deg,transparent,var(--gr) 15%,var(--hair) 85%,transparent)}nav button{width:38px;height:38px}nav button[data-key="projects"]{width:44px;height:44px;box-shadow:0 3px 12px rgba(196,73,33,.18),0 0 0 3px rgba(196,73,33,.09),inset 0 0 0 1px var(--ac)}nav button[data-key="projects"].is-active{box-shadow:0 3px 14px rgba(196,73,33,.25),0 0 0 4px rgba(196,73,33,.12),inset 0 0 0 1px var(--ac)}.dial-icon{width:16px;height:16px}.dial-tooltip{display:none}
+nav{left:0;width:100%;top:calc(50% - var(--mobile-dial-gap));transform:none;height:calc(var(--mobile-dial-gap) * 2);flex-direction:row;justify-content:center;align-items:center;gap:7px;background:var(--pl)}nav::before{top:50%;bottom:auto;left:7%;right:7%;width:auto;height:1px;background:linear-gradient(90deg,transparent,var(--gr) 15%,var(--hair) 85%,transparent)}nav button{width:38px;height:38px}nav button[data-key="projects"]{width:44px;height:44px;box-shadow:0 3px 12px rgba(196,73,33,.18),0 0 0 3px rgba(196,73,33,.09),inset 0 0 0 1px var(--ac)}nav button[data-key="projects"].is-active{box-shadow:0 3px 14px rgba(196,73,33,.25),0 0 0 4px rgba(196,73,33,.12),inset 0 0 0 1px var(--ac)}.dial-icon{width:16px;height:16px}.dial-tooltip{display:none}
+html,body{touch-action:pan-y}
 }
 @media(max-width:520px){.image-viewer-meta{max-width:58vw;display:grid;gap:3px;font-size:.58rem}.image-viewer-close{width:36px;height:36px}.image-viewer-arrow{width:34px;height:46px}.image-viewer-download{min-height:34px;padding:0 10px;font-size:.58rem}}
 </style></head><body>
@@ -225,14 +226,15 @@ const d=rm.matches?1:dur||Math.min(1500,600+120*Math.abs(to-from)),t0=performanc
 const step=d=>{if(!busy())go(cur+d,undefined,d>0?'forward':'backward')};
 /* wheel: one gesture = one step; trackpad inertia is absorbed */
 let acc=0,lt=0,la=0,armed=true;
-addEventListener('wheel',e=>{e.preventDefault();const now=performance.now(),d=e.deltaMode===1?e.deltaY*32:e.deltaY,ab=Math.abs(d),gap=now-lt;lt=now;
+addEventListener('wheel',e=>{if(e.ctrlKey)return;e.preventDefault();const now=performance.now(),d=e.deltaMode===1?e.deltaY*32:e.deltaY,ab=Math.abs(d),gap=now-lt;lt=now;
 if(gap>140)armed=true;if(ab>la*1.6&&ab>20)armed=true;la=ab;if(gap>200)acc=0;
 if(!viewer.hidden){if(armed&&ab>12){showViewerImage(viewerIndex+(d>0?1:-1));armed=false}return}
 if(!armed||busy())return;acc+=d;if(Math.abs(acc)>40){step(acc>0?1:-1);armed=false;acc=0}},{passive:false});
-let tx,ty,tn,tv;
-addEventListener('touchstart',e=>{tn=!!e.target.closest('nav');tv=!!e.target.closest('#image-viewer')&&!$('#image-viewer').hidden;tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
-addEventListener('touchend',e=>{if(tn)return;const t=e.changedTouches[0],dx=tx-t.clientX,dy=ty-t.clientY,d=Math.abs(dy)>=Math.abs(dx)?dy:dx;if(tv){if(Math.abs(dx)>50)showViewerImage(dx>0?viewerIndex+1:viewerIndex-1);return}if(Math.abs(d)>50)step(d>0?1:-1)},{passive:true});
-addEventListener('keydown',e=>{const k=e.key;if(!$('#image-viewer')?.hidden)return;if(e.target.closest('a,button')&&(k===' '||k==='Enter'))return;
+let tx,ty,tn,tv,nativeRefreshTouch;
+addEventListener('touchstart',e=>{tn=!!e.target.closest('nav');tv=!!e.target.closest('#image-viewer')&&!$('#image-viewer').hidden;nativeRefreshTouch=matchMedia('(max-width:899px)').matches&&e.touches[0].clientY<200;tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchmove',e=>{if(!nativeRefreshTouch)e.preventDefault()},{passive:false});
+addEventListener('touchend',e=>{if(tn||nativeRefreshTouch)return;const t=e.changedTouches[0],dx=tx-t.clientX,dy=ty-t.clientY,d=Math.abs(dy)>=Math.abs(dx)?dy:dx;if(tv){if(Math.abs(dx)>50)showViewerImage(dx>0?viewerIndex+1:viewerIndex-1);return}if(Math.abs(d)>50)step(d>0?1:-1)},{passive:true});
+addEventListener('keydown',e=>{const k=e.key;if(e.ctrlKey&&['=','+','-','_','0'].includes(k))return;if(!$('#image-viewer')?.hidden)return;if(e.target.closest('a,button')&&(k===' '||k==='Enter'))return;
 if(k==='ArrowDown'||k==='PageDown'||(k===' '&&!e.shiftKey))step(1);else if(k==='ArrowUp'||k==='PageUp'||(k===' '&&e.shiftKey))step(-1);else if(k==='Home')go(0);else if(k==='End')go(N-1);else return;e.preventDefault()});
 /* Match the reference dial controls: native button activation plus section jumps. */
 document.addEventListener('click',e=>{const b=e.target.closest('.cp');if(!b)return;navigator.clipboard?.writeText(b.dataset.c).then(()=>{b.classList.add('ok');setTimeout(()=>b.classList.remove('ok'),1500)}).catch(()=>{})});
