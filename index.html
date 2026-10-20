@@ -1,511 +1,251 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Utkarsh Yadav | Portfolio</title>
-  <meta name="description"
-    content="Portfolio of Utkarsh Yadav — AI and Data Science student at IIT Jodhpur building data-driven tools and Linux applications." />
-  <meta property="og:title" content="Utkarsh Yadav | Portfolio" />
-  <meta property="og:description" content="Student developer focused on data science, Python, and Linux systems." />
-  <meta property="og:image" content="profile_pic.jpeg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-  <!-- ── CURSOR ── -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-trail" id="cursorTrail"></div>
-
-  <!-- ── NAV ── -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">UY<span class="dot">.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certificates">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-right">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
-          <span class="theme-icon-light">☀</span>
-          <span class="theme-icon-dark">☾</span>
-        </button>
-        <a href="#contact" class="nav-cta">Get in Touch</a>
-        <button class="nav-burger" id="burger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#certificates">Experience</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <!-- ── HERO ── -->
-  <section class="hero" id="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="hero-content">
-
-      <div class="hero-left">
-        <div class="hero-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span>AI &amp; Data Science</span>
-        </div>
-        <h1 class="hero-name">
-          Utkarsh<br />
-          <em>Yadav</em>
-        </h1>
-        <p class="hero-subtitle" id="typedText"></p>
-        <p class="hero-desc">
-          Student developer at <strong>IIT Jodhpur</strong> building data-driven tools and Linux applications. Turning
-          complex problems into elegant, functional solutions.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary" id="hero-view-projects">View Projects</a>
-          <a href="#contact" class="btn btn-ghost" id="hero-contact">Contact</a>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="hero-avatar-frame" data-tilt>
-          <img src="profile_pic.jpeg" alt="Utkarsh Yadav" class="hero-avatar" id="heroAvatar" />
-          <div class="avatar-corner tl"></div>
-          <div class="avatar-corner tr"></div>
-          <div class="avatar-corner bl"></div>
-          <div class="avatar-corner br"></div>
-        </div>
-        <div class="hero-stats-col">
-          <div class="hero-stat">
-            <span class="hero-stat-num" data-count="8">0</span><span class="hero-stat-num">.5</span>
-            <span class="hero-stat-label">CGPA</span>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <span class="hero-stat-num" data-count="8">0</span><span class="hero-stat-num">+</span>
-            <span class="hero-stat-label">Projects</span>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <span class="hero-stat-num">2024–28</span>
-            <span class="hero-stat-label">Batch</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <a href="#about" class="hero-scroll" aria-label="Scroll">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
-    </a>
-  </section>
-
-  <!-- ── ABOUT ── -->
-  <section class="section about-section" id="about">
-    <div class="container">
-      <div class="section-meta">
-        <span class="section-num">01</span>
-        <span class="section-rule"></span>
-        <span class="section-label">About</span>
-      </div>
-      <div class="about-grid">
-        <div class="about-heading-col">
-          <h2 class="section-title">Who<br />I<br /><em>Am.</em></h2>
-        </div>
-        <div class="about-body-col">
-          <p class="about-lead">
-            A 19-year-old student at <strong>IIT Jodhpur</strong>, pursuing Applied AI &amp; Data Science — shaping the
-            future one dataset at a time.
-          </p>
-          <p class="about-body">
-            My journey started with curiosity and grew into building real, functional tools. From GNOME extensions that
-            organise daily life to Python utilities that automate the mundane — I love solving real problems with clean
-            code.
-          </p>
-          <p class="about-body">
-            I work primarily in Python and live inside a Linux environment, deeply familiar with the filesystem, shell
-            scripting, and the ecosystem around it.
-          </p>
-          <div class="about-chips">
-            <span class="chip">Python Developer</span>
-            <span class="chip">Linux Power User</span>
-            <span class="chip">Data Analyst</span>
-            <span class="chip">AI Enthusiast</span>
-            <span class="chip">Open Source</span>
-          </div>
-          <div class="about-info-row">
-            <div class="info-item">
-              <span class="info-label">Location</span>
-              <span class="info-val">India</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Institution</span>
-              <span class="info-val">IIT Jodhpur</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">CGPA</span>
-              <span class="info-val">8.5 / 10</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Status</span>
-              <span class="info-val">Open to opportunities</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SKILLS ── -->
-  <section class="section skills-section" id="skills">
-    <div class="container">
-      <div class="section-meta">
-        <span class="section-num">02</span>
-        <span class="section-rule"></span>
-        <span class="section-label">Skills</span>
-      </div>
-      <div class="skills-layout">
-        <h2 class="section-title skills-title">Technical<br /><em>Skills.</em></h2>
-        <div class="skills-body">
-
-          <div class="skill-group" id="sg-data">
-            <div class="skill-group-header">
-              <span class="skill-group-idx">01</span>
-              <h3 class="skill-group-name">Data Science</h3>
-            </div>
-            <div class="skill-tags">
-              <span class="stag stag-lg">Python</span>
-              <span class="stag stag-md">Pandas</span>
-              <span class="stag stag-md">NumPy</span>
-              <span class="stag stag-sm">Scikit-learn</span>
-              <span class="stag stag-md">Seaborn</span>
-              <span class="stag stag-sm">Matplotlib</span>
-              <span class="stag stag-sm">EDA</span>
-              <span class="stag stag-sm">ML Fundamentals</span>
-            </div>
-          </div>
-
-          <div class="skill-group-divider"></div>
-
-          <div class="skill-group" id="sg-systems">
-            <div class="skill-group-header">
-              <span class="skill-group-idx">02</span>
-              <h3 class="skill-group-name">Systems &amp; Tools</h3>
-            </div>
-            <div class="skill-tags">
-              <span class="stag stag-lg">Linux</span>
-              <span class="stag stag-md">Git &amp; GitHub</span>
-              <span class="stag stag-sm">CLI Tools</span>
-            </div>
-          </div>
-
-          <div class="skill-group-divider"></div>
-
-          <div class="skill-group" id="sg-hobby">
-            <div class="skill-group-header">
-              <span class="skill-group-idx">03</span>
-              <h3 class="skill-group-name">Hobby &amp; General</h3>
-            </div>
-            <div class="skill-tags">
-              <span class="stag stag-lg">Vibe Coding</span>
-              <span class="stag stag-lg">Blender</span>
-              <span class="stag stag-md">Sketching</span>
-              <span class="stag stag-md">Designing</span>
-              <span class="stag stag-md">Learning New Tools</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PROJECTS ── -->
-  <section class="section projects-section" id="projects">
-    <div class="container">
-      <div class="section-meta">
-        <span class="section-num">03</span>
-        <span class="section-rule"></span>
-        <span class="section-label">Projects</span>
-      </div>
-      <h2 class="section-title">What I've<br /><em>Built.</em></h2>
-      <p class="section-sub">Personal tools, academic work, and open-source contributions.</p>
-
-      <div class="projects-list">
-
-        <a href="https://github.com/utkarsh-brainstorm/TaskMan" target="_blank" rel="noopener" class="project-row"
-          id="proj-taskman">
-          <div class="project-row-num">01</div>
-          <div class="project-row-body">
-            <div class="project-row-top">
-              <h3 class="project-row-title">TaskMan</h3>
-              <div class="project-row-tags">
-                <span>GNOME Extension</span>
-                <span>GJS</span>
-                <span>Linux</span>
-                <span class="tag-vibe">Vibe Coded</span>
-              </div>
-            </div>
-            <p class="project-row-desc">A calendar-integrated daily task manager for the GNOME panel. Dynamic colour
-              coding for task load, timed reminders with Snooze &amp; Dismiss notifications.</p>
-          </div>
-          <div class="project-row-arrow" data-href="https://github.com/utkarsh-brainstorm/TaskMan">↗
-            <div class="link-preview">github.com/utkarsh-brainstorm/TaskMan</div>
-          </div>
-        </a>
-
-        <a href="https://github.com/utkarsh-brainstorm/HabitShaper" target="_blank" rel="noopener" class="project-row"
-          id="proj-habitshaper">
-          <div class="project-row-num">02</div>
-          <div class="project-row-body">
-            <div class="project-row-top">
-              <h3 class="project-row-title">HabitShaper</h3>
-              <div class="project-row-tags">
-                <span>Productivity</span>
-                <span>JavaScript</span>
-                <span class="tag-vibe">Vibe Coded</span>
-              </div>
-            </div>
-            <p class="project-row-desc">A habit tracking application designed to build and maintain daily routines with
-              long-term progress visualisation and consistency tracking.</p>
-          </div>
-          <div class="project-row-arrow" data-href="https://github.com/utkarsh-brainstorm/HabitShaper">↗
-            <div class="link-preview">github.com/utkarsh-brainstorm/HabitShaper</div>
-          </div>
-        </a>
-
-        <a href="https://github.com/utkarsh-brainstorm/InkStrokes" target="_blank" rel="noopener" class="project-row"
-          id="proj-inkstrokes">
-          <div class="project-row-num">03</div>
-          <div class="project-row-body">
-            <div class="project-row-top">
-              <h3 class="project-row-title">InkStrokes</h3>
-              <div class="project-row-tags">
-                <span>AI Powered</span>
-                <span>JavaScript</span>
-                <span class="tag-vibe">Vibe Coded</span>
-              </div>
-            </div>
-            <p class="project-row-desc">Artistic Progress Tracker with AI-powered feedback. Tracks artistic growth over
-              time and provides intelligent insights for improvement.</p>
-          </div>
-          <div class="project-row-arrow" data-href="https://github.com/utkarsh-brainstorm/InkStrokes">↗
-            <div class="link-preview">github.com/utkarsh-brainstorm/InkStrokes</div>
-          </div>
-        </a>
-
-        <a href="https://github.com/utkarsh-brainstorm/Htm2pdf" target="_blank" rel="noopener" class="project-row"
-          id="proj-htm2pdf">
-          <div class="project-row-num">04</div>
-          <div class="project-row-body">
-            <div class="project-row-top">
-              <h3 class="project-row-title">Htm2pdf</h3>
-              <div class="project-row-tags">
-                <span>Python</span>
-                <span>CLI Tool</span>
-                <span>Automation</span>
-                <span class="tag-vibe">Vibe Coded</span>
-              </div>
-            </div>
-            <p class="project-row-desc">A Python utility that converts HTML documents to PDF format, streamlining
-              document workflows and eliminating manual conversion steps.</p>
-          </div>
-          <div class="project-row-arrow" data-href="https://github.com/utkarsh-brainstorm/Htm2pdf">↗
-            <div class="link-preview">github.com/utkarsh-brainstorm/Htm2pdf</div>
-          </div>
-        </a>
-
-        <a href="https://github.com/utkarsh-brainstorm/PDF_OOPS" target="_blank" rel="noopener" class="project-row"
-          id="proj-pdfoops">
-          <div class="project-row-num">05</div>
-          <div class="project-row-body">
-            <div class="project-row-top">
-              <h3 class="project-row-title">PDF_OOPS</h3>
-              <div class="project-row-tags">
-                <span>Python</span>
-                <span>PDF Tools</span>
-                <span class="tag-vibe">Vibe Coded</span>
-              </div>
-            </div>
-            <p class="project-row-desc">A Python-based PDF manipulation tool for common operations — keeping things open
-              and dependency-free.</p>
-          </div>
-          <div class="project-row-arrow" data-href="https://github.com/utkarsh-brainstorm/PDF_OOPS">↗
-            <div class="link-preview">github.com/utkarsh-brainstorm/PDF_OOPS</div>
-          </div>
-        </a>
-
-        <a href="https://github.com/utkarsh-brainstorm" target="_blank" rel="noopener" class="project-row"
-          id="proj-curriculum">
-          <div class="project-row-num">06</div>
-          <div class="project-row-body">
-            <div class="project-row-top">
-              <h3 class="project-row-title">Data Analytics Projects</h3>
-              <div class="project-row-tags">
-                <span>Academic</span>
-                <span>Pandas</span>
-                <span>Scikit-learn</span>
-              </div>
-            </div>
-            <p class="project-row-desc">Curriculum-based data analytics at IIT Jodhpur — exploratory analysis,
-              visualisation, and machine learning modelling on real-world datasets.</p>
-          </div>
-          <div class="project-row-arrow" data-href="https://github.com/utkarsh-brainstorm">↗
-            <div class="link-preview">github.com/utkarsh-brainstorm</div>
-          </div>
-        </a>
-
-      </div>
-
-      <div class="projects-cta">
-        <a href="https://github.com/utkarsh-brainstorm" target="_blank" rel="noopener" class="btn btn-primary"
-          id="github-all">All Projects on GitHub ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── EDUCATION ── -->
-  <section class="section education-section" id="education">
-    <div class="container">
-      <div class="section-meta">
-        <span class="section-num">04</span>
-        <span class="section-rule"></span>
-        <span class="section-label">Education</span>
-      </div>
-      <h2 class="section-title">Academic<br /><em>Journey.</em></h2>
-      <div class="edu-card" id="edu-iitj">
-        <div class="edu-card-left">
-          <div class="edu-period">2024 — 2028</div>
-          <div class="edu-badge">Ongoing</div>
-        </div>
-        <div class="edu-card-right">
-          <div class="edu-degree">BS in Applied AI &amp; Data Science</div>
-          <div class="edu-institution">Indian Institute of Technology Jodhpur</div>
-          <p class="edu-desc">
-            A rigorous four-year programme covering machine learning, statistical analysis, data engineering, and
-            applied AI. Balanced coursework with independent projects to build real engineering skills beyond the
-            classroom.
-          </p>
-          <div class="edu-highlights">
-            <div class="edu-highlight">
-              <span class="edu-h-label">CGPA</span>
-              <span class="edu-h-val">8.5</span>
-            </div>
-            <div class="edu-highlight">
-              <span class="edu-h-label">Since</span>
-              <span class="edu-h-val">Feb 2026</span>
-            </div>
-            <div class="edu-highlight">
-              <span class="edu-h-label">Focus</span>
-              <span class="edu-h-val">Applied AI, ML, Data Science</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CERTIFICATES ── -->
-  <section class="section certs-section" id="certificates">
-    <div class="container">
-      <div class="section-meta">
-        <span class="section-num">05</span>
-        <span class="section-rule"></span>
-        <span class="section-label">Certificates &amp; Experience</span>
-      </div>
-      <h2 class="section-title">Recognition &amp;<br /><em>Experience.</em></h2>
-      <p class="section-sub">Certifications, hackathons, and workshops I've participated in.</p>
-      <div class="certs-gallery" id="certsGallery">
-        <!-- Populated dynamically from cert_exp/manifest.json -->
-        <div class="certs-loading">Loading certificates…</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CERT LIGHTBOX ── -->
-  <div class="cert-lightbox" id="certLightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer">
-    <div class="cert-lightbox-backdrop" id="certLightboxBackdrop"></div>
-    <div class="cert-lightbox-inner">
-      <button class="cert-lightbox-close" id="certLightboxClose" aria-label="Close">✕</button>
-      <div class="cert-lightbox-spinner" id="certLightboxSpinner"></div>
-      <img class="cert-lightbox-img" id="certLightboxImg" src="" alt="" />
-      <div class="cert-lightbox-footer">
-        <span class="cert-lightbox-name" id="certLightboxName"></span>
-        <a class="cert-lightbox-dl" id="certLightboxDl" href="" download aria-label="Download certificate">
-          ↓ Download
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── CONTACT ── -->
-
-  <section class="section contact-section" id="contact">
-    <div class="container">
-      <div class="section-meta">
-        <span class="section-num">06</span>
-        <span class="section-rule"></span>
-        <span class="section-label">Contact</span>
-      </div>
-      <h2 class="section-title">Let's<br /><em>Connect.</em></h2>
-      <p class="section-sub">Open to collaborations, internships, or just a good technical conversation.</p>
-      <div class="contact-list">
-        <a href="mailto:utkarshy.work@gmail.com" class="contact-row" id="contact-email">
-          <span class="contact-row-label">Email</span>
-          <span class="contact-row-val">utkarshy.work@gmail.com</span>
-          <span class="contact-row-arrow">→<div class="link-preview">utkarshy.work@gmail.com</div></span>
-        </a>
-        <a href="https://linkedin.com/in/utkarsh-rwx" target="_blank" rel="noopener" class="contact-row"
-          id="contact-linkedin">
-          <span class="contact-row-label">LinkedIn</span>
-          <span class="contact-row-val">utkarsh-rwx</span>
-          <span class="contact-row-arrow">→<div class="link-preview">linkedin.com/in/utkarsh-rwx</div></span>
-        </a>
-        <a href="https://github.com/utkarsh-brainstorm" target="_blank" rel="noopener" class="contact-row"
-          id="contact-github">
-          <span class="contact-row-label">GitHub</span>
-          <span class="contact-row-val">utkarsh-brainstorm</span>
-          <span class="contact-row-arrow">→<div class="link-preview">github.com/utkarsh-brainstorm</div></span>
-        </a>
-        <a href="tel:+919917393781" class="contact-row" id="contact-phone">
-          <span class="contact-row-label">Phone</span>
-          <span class="contact-row-val">+91 99173 93781</span>
-          <span class="contact-row-arrow">→<div class="link-preview">+91 99173 93781</div></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FOOTER ── -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-logo">UY<span class="dot">.</span></div>
-        <p class="footer-copy">© 2026 Utkarsh Yadav. Built with precision.</p>
-        <div class="footer-links">
-          <a href="https://github.com/utkarsh-brainstorm" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://linkedin.com/in/utkarsh-rwx" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Utkarsh Yadav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--pl:#fdfcf9;--pr:#f5f2e9;--ink:#191816;--mut:#79746a;--gr:#a8a396;--hair:#e6e2d6;--ac:#c44921;--ac-soft:rgba(196,73,33,.16);--sz:clamp(42px,6vh,54px);--p:clamp(28px,5vw,84px);--q:clamp(76px,7.5vw,120px);--sans:'Plus Jakarta Sans',system-ui,sans-serif;--serif:'Newsreader',Georgia,serif;--mono:'JetBrains Mono',monospace;--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden;background:var(--pl);color:var(--ink);font:400 clamp(15px,.9vw + .6vh,18px)/1.55 var(--sans);touch-action:none;-webkit-font-smoothing:antialiased}
+.page{position:fixed;top:0;bottom:0;width:50%;overflow:hidden}
+.L{left:0;background:var(--pl)}.R{right:0;background:var(--pr)}
+.page::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;background-image:linear-gradient(to right,rgba(214,208,192,.35) 1px,transparent 1px),linear-gradient(to bottom,rgba(214,208,192,.35) 1px,transparent 1px);background-size:64px 64px}
+.page::after{content:"";position:absolute;top:0;bottom:0;width:88px;pointer-events:none;z-index:1}
+.L::after{right:0;background:linear-gradient(90deg,transparent,rgba(25,24,22,.055))}
+.R::after{left:0;background:linear-gradient(270deg,transparent,rgba(25,24,22,.055))}
+.track{position:absolute;top:0;left:0;width:var(--sw);display:flex;flex-direction:column}
+.R .track{flex-direction:column-reverse}
+.sp{width:var(--sw);height:var(--sh);flex:none;position:relative;display:flex;flex-direction:column;justify-content:center;padding:7vh var(--q) 7vh var(--p)}
+.R .sp{padding:7vh var(--p) 7vh var(--q)}
+.c{display:flex;flex-direction:column;gap:clamp(10px,2vh,20px);opacity:0;transform:translateY(10px);transition:opacity .34s .02s,transform .42s var(--ease)}
+.sp.in .c{opacity:1;transform:none}
+h1{font:400 clamp(3.4rem,11vmin,8.5rem)/.9 var(--serif);letter-spacing:-.035em}
+h2{font:400 clamp(2rem,4vh + 1vw,3.5rem)/1.02 var(--serif);letter-spacing:-.025em}
+h3{font:600 .76rem var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--ac)}
+.m{font:400 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}.lede{font:400 clamp(1.3rem,2.6vh + .8vw,2rem)/1.25 var(--serif)}
+.big{font:400 clamp(3.4rem,10vh,6.5rem)/1 var(--serif);letter-spacing:-.04em}.big small{font:500 .75rem var(--sans);color:var(--mut);margin-left:.5em;letter-spacing:0}
+ul.l{list-style:none;padding:0;display:grid;gap:.45em}ul.l li{padding:.5em .65em;border-bottom:1px solid var(--hair);background:rgba(255,255,255,.46)}
+b{font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{font:400 .72rem var(--mono);padding:.3em .75em;border:1px solid color-mix(in srgb,var(--ac) 30%,var(--hair));border-radius:99px;background:rgba(255,255,255,.5);transition:border-color .35s,color .35s}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--ac);text-underline-offset:.22em;text-decoration-thickness:1px;transition:color .2s}a:hover{color:var(--ac)}
+a:focus-visible,.cp:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.row{display:grid;grid-template-columns:5.5rem 1fr auto;gap:12px;align-items:center;padding:1rem 0;border-bottom:1px solid var(--hair)}
+.cp{all:unset;cursor:pointer;padding:6px;border-radius:50%;color:var(--mut);display:grid}.cp:hover{color:var(--ac)}
+.cp svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cp .ck,.cp.ok .cy{display:none}.cp.ok .ck{display:block}
+.cue{width:22px;height:22px;fill:none;stroke:var(--ac);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:2vh;animation:bob 2.4s ease-in-out infinite;transition:opacity .4s}.cue.gone{opacity:0}
+@keyframes bob{50%{transform:translateY(5px)}}
+.fo{position:absolute;bottom:3.2vh;font:normal .62rem var(--mono);letter-spacing:.1em;color:var(--gr)}.L .fo{left:var(--p)}.R .fo{right:var(--p)}
+.seam{position:fixed;left:50%;top:0;bottom:0;width:1px;background:var(--hair)}
+nav{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:clamp(4px,1.2vh,12px);z-index:5;padding:10px 0}
+nav::before{content:"";position:absolute;z-index:-1;top:-7vh;bottom:-7vh;left:50%;width:1px;background:linear-gradient(transparent,var(--gr) 15%,var(--hair) 85%,transparent)}
+nav button{all:unset;position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer;width:52px;height:52px;border-radius:50%;touch-action:manipulation;background:var(--pl);box-shadow:0 2px 8px rgba(35,29,18,.045),inset 0 0 0 1px var(--hair);transition:transform .3s var(--ease),box-shadow .3s ease,background-color .3s ease}
+nav button:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+nav button:hover{transform:scale(1.08);box-shadow:0 4px 12px rgba(0,0,0,.08),inset 0 0 0 1px var(--gr)}
+nav button.is-active{background:#fff;box-shadow:0 4px 14px var(--ac-soft),inset 0 0 0 1px var(--ac)}
+nav button[data-key="projects"]{width:62px;height:62px;background:#fff7f1;box-shadow:0 5px 18px rgba(196,73,33,.2),0 0 0 5px rgba(196,73,33,.09),inset 0 0 0 1.5px var(--ac);z-index:1}
+nav button[data-key="projects"] .dial-icon{width:22px;height:22px;color:var(--ac);transform:scale(1.06)}
+nav button[data-key="projects"].is-active{background:#fff;box-shadow:0 5px 20px rgba(196,73,33,.28),0 0 0 6px rgba(196,73,33,.13),inset 0 0 0 1.5px var(--ac)}
+.dial-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.dial-ticks{stroke:var(--gr);stroke-width:1.2;stroke-linecap:round;transform-origin:center;transition:transform .9s var(--ease),stroke .3s ease}
+.dial-ring-indicator{fill:none;stroke:var(--ac);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:182.2;stroke-dashoffset:182.2;transform:rotate(-90deg);transform-origin:center;transition:transform .75s var(--ease),stroke-dashoffset .6s ease}
+.dial-icon{position:relative;z-index:3;width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;color:var(--mut);transition:color .25s ease,transform .25s ease}
+nav button.is-active .dial-icon{color:var(--ac);transform:scale(1.05)}nav button.is-active .dial-ticks{stroke:var(--ac)}
+.pulse{animation:dial-arrive 420ms var(--ease)}@keyframes dial-arrive{45%{transform:scale(1.1)}}
+.dial-tooltip{position:absolute;left:56px;white-space:nowrap;background:var(--ink);color:#fff;font:500 11px var(--mono);padding:5px 10px;border-radius:4px;pointer-events:none;opacity:0;transform:translateX(-6px);transition:opacity .2s ease,transform .2s ease;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:20}
+.dial-tooltip::before{content:"";position:absolute;top:50%;left:-4px;transform:translateY(-50%);border-width:4px 4px 4px 0;border-style:solid;border-color:transparent var(--ink) transparent transparent}
+nav button:hover .dial-tooltip,nav button:focus-visible .dial-tooltip{opacity:1;transform:translateX(0)}
+.sp.project-sp .c{padding:clamp(14px,1.8vw,24px);border:1px solid color-mix(in srgb,var(--ac) 25%,var(--hair));border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(255,252,246,.68));box-shadow:0 14px 38px rgba(74,53,30,.09)}
+.project-card{display:flex;flex-direction:column;gap:clamp(7px,1.2vh,12px);min-width:0}
+.project-card h2{font-size:clamp(1.8rem,3.3vh + .7vw,3rem)}
+.project-card .m{font-size:.66rem}
+.project-card .project-desc{font-size:.88em;line-height:1.48}
+.project-links{display:flex;gap:12px;align-items:center;font:500 .66rem var(--mono);color:var(--mut)}
+.project-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 12px;margin-top:3px}
+.project-thumb{all:unset;position:relative;display:block;overflow:hidden;aspect-ratio:16/9;border:1px solid #d9d4c8;border-radius:12px;background:#e9e5dc;cursor:zoom-in;box-shadow:0 5px 16px rgba(49,38,22,.09)}
+.project-thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease),filter .3s ease}
+.project-thumb:hover img{transform:scale(1.035);filter:saturate(1.05)}
+.project-thumb::after{content:attr(data-label);position:absolute;left:9px;bottom:8px;padding:4px 7px;border-radius:5px;background:rgba(25,24,22,.78);color:#fff;font:500 .57rem var(--mono);letter-spacing:.04em}
+.project-gallery-footer{grid-column:1/-1;display:flex;align-items:center;gap:10px;color:var(--mut);font:400 .62rem var(--mono)}
+.project-gallery-footer button{all:unset;cursor:pointer;color:var(--ac);font:500 .65rem var(--mono);text-decoration:underline;text-underline-offset:3px}
+.project-empty{padding:10px 12px;border:1px dashed var(--hair);border-radius:9px;font:400 .65rem var(--mono);color:var(--mut)}
+.skill-groups .chips{gap:8px}.skill-groups .chips span{font-size:.78rem;padding:.4em .85em}
+.semester-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.semester-card{padding:12px;border:1px solid var(--hair);border-radius:12px;background:rgba(255,255,255,.52)}
+.semester-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:6px}
+.semester-head h3{font-size:.65rem}
+.semester-head span{font:500 .64rem var(--mono);color:var(--ac);white-space:nowrap}
+.semester-card p{font-size:.72rem;line-height:1.42;color:var(--mut)}
+.course-list{display:grid;grid-template-columns:1fr;gap:5px 12px;list-style:none;padding:0}
+.course-list li{font-size:.76rem;line-height:1.3;padding:5px 0;border-bottom:1px solid var(--hair)}
+.course-list strong{display:block;font:500 .62rem var(--mono);color:var(--ac)}
+.skill-groups{display:grid;gap:14px}
+.experience-list{display:grid;gap:10px}
+.experience-item{padding:10px 12px;border-left:2px solid var(--ac);background:rgba(255,255,255,.48)}
+.experience-item h3{font-size:.7rem;margin-bottom:4px}
+.experience-item p{font-size:.76rem;line-height:1.4;color:var(--mut)}
+.experience-highlight{font-weight:700;color:var(--ink);box-shadow:inset 0 -.28em 0 rgba(196,73,33,.2)}
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cert-card{all:unset;display:flex;flex-direction:column;min-width:0;cursor:zoom-in;border:1px solid #ddd8cc;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 6px 18px rgba(49,38,22,.08);transition:transform .25s var(--ease),box-shadow .25s ease}
+.cert-card:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(49,38,22,.1)}
+.cert-card img{display:block;width:100%;aspect-ratio:1.414/1;object-fit:contain;padding:7px;background:#f4f1e9}
+.cert-card span{display:flex;align-items:center;min-height:36px;padding:7px 10px;border-top:1px solid var(--hair);font:500 .62rem var(--mono);line-height:1.3;color:var(--mut)}
+.image-viewer[hidden]{display:none}
+.image-viewer{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:0}
+.image-viewer-backdrop{position:absolute;inset:0;background:rgba(10,10,10,.94)}
+.image-viewer-panel{position:relative;width:100vw;height:100vh;overflow:hidden;background:transparent}
+.image-viewer-image{display:block;width:100%;height:100%;object-fit:contain;background:transparent}
+.image-viewer-meta{position:absolute;left:clamp(14px,3vw,38px);bottom:clamp(14px,3vh,32px);display:flex;align-items:baseline;gap:10px;max-width:70vw;padding:8px 11px;border-radius:8px;background:rgba(12,12,12,.38);color:rgba(255,255,255,.82);font:400 .68rem var(--mono);opacity:.72;transition:opacity .2s ease;backdrop-filter:blur(8px)}
+.image-viewer-meta:hover{opacity:1}.image-viewer-meta strong{font:600 .74rem var(--sans);color:#fff}.image-viewer-count{color:rgba(255,255,255,.66);white-space:nowrap}
+.image-viewer-close,.image-viewer-arrow,.image-viewer-download{position:absolute;display:grid;place-items:center;border:0;border-radius:99px;background:rgba(10,10,10,.4);color:rgba(255,255,255,.82);opacity:.48;transition:opacity .2s ease,background-color .2s ease;backdrop-filter:blur(8px);cursor:pointer;text-decoration:none}
+.image-viewer-close:hover,.image-viewer-arrow:hover,.image-viewer-download:hover{opacity:.92;background:rgba(10,10,10,.65);color:#fff}
+.image-viewer-close{top:clamp(12px,2.5vh,24px);right:clamp(12px,2.5vw,28px);width:40px;height:40px;font:400 1.4rem var(--sans)}
+.image-viewer-arrow{top:50%;width:42px;height:54px;transform:translateY(-50%);font:400 1.8rem var(--sans)}.image-viewer-prev{left:clamp(10px,2vw,24px)}.image-viewer-next{right:clamp(10px,2vw,24px)}
+.image-viewer-download{right:clamp(14px,3vw,38px);bottom:clamp(14px,3vh,32px);min-height:36px;padding:0 13px;font:500 .66rem var(--mono)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(max-height:620px) and (min-width:900px){nav{gap:5px}nav button{width:42px;height:42px}.dial-icon{width:16px;height:16px}}
+@media(prefers-reduced-motion:reduce){.c,nav button,.dial-icon{transition-duration:.01ms}.cue,.pulse{animation:none}}
+@media(max-width:899px){
+:root{--sz:36px;--p:20px;--q:20px}
+html,body{font-size:14px}
+.page{width:100%;height:calc(50% - 24px)}.L{top:0;bottom:auto}.R{bottom:0;top:auto}.page::after,.fo,.x{display:none}
+.track,.R .track{flex-direction:row;width:auto;height:var(--sh)}.R .track{flex-direction:row-reverse}
+.sp,.R .sp{padding:12px 20px;overflow:hidden}.L .sp{padding-top:max(12px,env(safe-area-inset-top))}.R .sp{padding-bottom:max(12px,env(safe-area-inset-bottom))}
+.c{gap:8px}h1{font-size:3.2rem}h2{font-size:1.6rem}.big{font-size:2.8rem}.lede{font-size:1.15rem}ul.l{gap:.3em}.row{padding:.5rem 0}
+.sp.project-sp .c{padding:12px;border-radius:12px}.project-gallery{gap:6px}.project-thumb{border-radius:8px}.project-card .project-desc{font-size:.78em}.project-gallery-footer{font-size:.56rem}.semester-grid{gap:6px}.semester-card{padding:8px}.semester-card p{font-size:.66rem}.semester-head h3{font-size:.58rem}.semester-head span{font-size:.57rem}.cert-grid{gap:6px}.cert-card img{padding:4px}.cert-card span{font-size:.56rem;padding:5px;min-height:30px}.experience-list{gap:7px}.experience-item{padding:8px}
+.seam{left:0;right:0;top:50%;bottom:auto;width:auto;height:1px}
+nav{left:0;width:100%;top:calc(50% - 24px);transform:none;height:48px;flex-direction:row;justify-content:center;align-items:center;gap:7px;background:var(--pl)}nav::before{top:50%;bottom:auto;left:7%;right:7%;width:auto;height:1px;background:linear-gradient(90deg,transparent,var(--gr) 15%,var(--hair) 85%,transparent)}nav button{width:38px;height:38px}nav button[data-key="projects"]{width:44px;height:44px;box-shadow:0 3px 12px rgba(196,73,33,.18),0 0 0 3px rgba(196,73,33,.09),inset 0 0 0 1px var(--ac)}nav button[data-key="projects"].is-active{box-shadow:0 3px 14px rgba(196,73,33,.25),0 0 0 4px rgba(196,73,33,.12),inset 0 0 0 1px var(--ac)}.dial-icon{width:16px;height:16px}.dial-tooltip{display:none}
+}
+@media(max-width:520px){.image-viewer-meta{max-width:58vw;display:grid;gap:3px;font-size:.58rem}.image-viewer-close{width:36px;height:36px}.image-viewer-arrow{width:34px;height:46px}.image-viewer-download{min-height:34px;padding:0 10px;font-size:.58rem}}
+</style></head><body>
+<div class="page L"><div class="track"></div></div><div class="page R"><div class="track"></div></div>
+<div class="seam"></div><nav role="tablist" aria-orientation="vertical" aria-label="Sections"></nav><div class="sr" aria-live="polite"></div>
+<div class="image-viewer" id="image-viewer" role="dialog" aria-modal="true" aria-label="Image viewer" hidden><div class="image-viewer-backdrop" data-viewer-close></div><div class="image-viewer-panel"><img class="image-viewer-image" id="image-viewer-image" src="" alt=""><div class="image-viewer-meta"><strong id="image-viewer-name"></strong><span class="image-viewer-count" id="image-viewer-count"></span><span id="image-viewer-caption"></span></div><button class="image-viewer-close" type="button" data-viewer-close aria-label="Close image viewer">×</button><button class="image-viewer-arrow image-viewer-prev" type="button" data-viewer-prev aria-label="Previous image">‹</button><button class="image-viewer-arrow image-viewer-next" type="button" data-viewer-next aria-label="Next image">›</button><a class="image-viewer-download" id="image-viewer-download" href="" download>↓ Download</a></div></div>
+<script>
+const GH='https://github.com/utkarsh-brainstorm';
+const CERTS=[
+{name:'CU AI Hackathon',file:'cert_exp/AI_Hack_Matrix_CU_Hackathon.jpeg',thumb:'cert_exp/thumbs/AI_Hack_Matrix_CU_Hackathon_thumb.jpg'},
+{name:'RANE Hackathon',file:'cert_exp/Drive_next_Rane_hackathon.jpeg',thumb:'cert_exp/thumbs/Drive_next_Rane_hackathon_thumb.jpg'},
+{name:'AI & Data Science Workshop',file:'cert_exp/Workshop_on_AI_ML_with_Data_Science.jpeg',thumb:'cert_exp/thumbs/Workshop_on_AI_ML_with_Data_Science_thumb.jpg'},
+{name:'Data Science Course',file:'cert_exp/The_Ultimate_Job_Ready_Data_Science_Course_Certificate.jpg',thumb:'cert_exp/thumbs/The_Ultimate_Job_Ready_Data_Science_Course_Certificate_thumb.jpg'}
+];
+const PROJECT_MEDIA={
+TINC:[['Project SS/TINC/Screenshot From 2026-10-20 21-30-37.png','Project SS/_thumbs/TINC/Screenshot From 2026-10-20 21-30-37.jpg'],['Project SS/TINC/Screenshot From 2026-10-20 21-30-41.png','Project SS/_thumbs/TINC/Screenshot From 2026-10-20 21-30-41.jpg'],['Project SS/TINC/Screenshot From 2026-10-20 21-30-44.png','Project SS/_thumbs/TINC/Screenshot From 2026-10-20 21-30-44.jpg'],['Project SS/TINC/Screenshot From 2026-10-20 21-30-48.png','Project SS/_thumbs/TINC/Screenshot From 2026-10-20 21-30-48.jpg'],['Project SS/TINC/Screenshot From 2026-10-20 21-30-51.png','Project SS/_thumbs/TINC/Screenshot From 2026-10-20 21-30-51.jpg']],
+syncer:[['Project SS/Syncer/Main Panel.png','Project SS/_thumbs/Syncer/Main Panel.jpg'],['Project SS/Syncer/Admin Panel.png','Project SS/_thumbs/Syncer/Admin Panel.jpg']],
+querii:[['Project SS/Querii/Main Interface.png','Project SS/_thumbs/Querii/Main Interface.jpg'],['Project SS/Querii/Advance querii section.png','Project SS/_thumbs/Querii/Advance querii section.jpg'],['Project SS/Querii/PDF Editor1.png','Project SS/_thumbs/Querii/PDF Editor1.jpg']],
+datamaster:[['Project SS/datamaster/1.png','Project SS/_thumbs/datamaster/1.jpg'],['Project SS/datamaster/2.png','Project SS/_thumbs/datamaster/2.jpg']],
+attendance:[['Project SS/Attendance Processor Pro/1.png','Project SS/_thumbs/Attendance Processor Pro/1.jpg'],['Project SS/Attendance Processor Pro/2.png','Project SS/_thumbs/Attendance Processor Pro/2.jpg'],['Project SS/Attendance Processor Pro/3.png','Project SS/_thumbs/Attendance Processor Pro/3.jpg']],
+compressor:[['Project SS/OnlyImageCompressorYouNeed/1.png','Project SS/_thumbs/OnlyImageCompressorYouNeed/1.jpg'],['Project SS/OnlyImageCompressorYouNeed/2.png','Project SS/_thumbs/OnlyImageCompressorYouNeed/2.jpg'],['Project SS/OnlyImageCompressorYouNeed/3.png','Project SS/_thumbs/OnlyImageCompressorYouNeed/3.jpg']],
+habitshaper:[['Project SS/HabitShaper/Screenshot From 2026-10-20 21-07-07.png','Project SS/_thumbs/HabitShaper/Screenshot From 2026-10-20 21-07-07.jpg']],
+taskman:[['Project SS/Taskman/1.png','Project SS/_thumbs/Taskman/1.jpg'],['Project SS/Taskman/2.png','Project SS/_thumbs/Taskman/2.jpg']],
+pdf_oops:[['Project SS/PDF_OOPS/1.png','Project SS/_thumbs/PDF_OOPS/1.jpg'],['Project SS/PDF_OOPS/2.png','Project SS/_thumbs/PDF_OOPS/2.jpg']],
+htm2pdf:[['Project SS/html2pdf/Screenshot From 2026-10-20 21-14-58.png','Project SS/_thumbs/html2pdf/Screenshot From 2026-10-20 21-14-58.jpg']]
+};
+const SEC=[
+['home','Home','#C44921','M12 3v6M12 15v6M3 12h6M15 12h6M5.6 5.6l4 4M14.4 14.4l4 4M18.4 5.6l-4 4M9.6 14.4l-4 4'],
+['about','About','#C44921','M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4.5 20c.8-3.6 3.8-5.5 7.5-5.5s6.7 1.9 7.5 5.5'],
+['education','Education','#C44921','M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.3 2.7 2.5 6 2.5s6-1.2 6-2.5v-4.5M22 9v6'],
+['skills','Skills','#C44921','M12 3l9 5-9 5-9-5zM3 12.5l9 5 9-5M3 16.5l9 5 9-5'],
+['projects','Projects','#C44921','M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5'],
+['experience','Certificates and experience','#C44921','M12 14a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM8.5 13.2L7 21l5-2.8 5 2.8-1.5-7.8'],
+['contact','Contact','#C44921','M3.5 6h17v12h-17zM3.5 7l8.5 6.5L20.5 7']];
+const ul=(a,k=9)=>'<ul class=l>'+a.map((t,i)=>`<li${i>=k?' class=x':''}>${t}</li>`).join('')+'</ul>';
+const ch=a=>'<div class=chips>'+a.map(t=>`<span>${t}</span>`).join('')+'</div>';
+const gp=(t,a,x)=>`<div${x?' class=x':''}><h3>${t}</h3>${ch(a)}</div>`;
+const projectTitles={tinc:'Tinc',syncer:'Syncer',querii:'Querii',datamaster:'DataMaster',attendance:'Attendance Processor Pro',compressor:'OnlyImageCompressorYouNeed',habitshaper:'HabitShaper',taskman:'TaskMan',pdf_oops:'PDF_OOPS',htm2pdf:'Htm2pdf',inkstrokes:'InkStrokes','applied-ai-notes':'Applied AI Notes'};
+const projectGallery=id=>{
+const images=PROJECT_MEDIA[id.toUpperCase()]||PROJECT_MEDIA[id]||[];if(!images.length)return `<div class=project-empty>Screenshot gallery · Project SS/${projectTitles[id]||id}/</div>`;
+const title=projectTitles[id]||id,previews=images.slice(0,2);
+return `<div class=project-gallery>${previews.map(([full,thumb],i)=>`<button class=project-thumb type=button data-gallery-kind=project data-gallery-id="${id}" data-index="${i}" data-label="SCREEN ${String(i+1).padStart(2,'0')}" aria-label="Open ${title} screenshot ${i+1}"><img loading=lazy decoding=async fetchpriority=low src="${encodeURI(thumb)}" alt="${title} screenshot ${i+1}"></button>`).join('')}<div class=project-gallery-footer><span>${images.length} screenshots</span><button type=button data-gallery-kind=project data-gallery-id="${id}" data-index="0">Browse gallery →</button></div></div>`
+};
+const pj=(id,num,name,kind,desc,tags,url)=>`<article class=project-card><p class=m>${String(num).padStart(2,'0')} / 12 · ${kind}</p><h2>${name}</h2><p class=project-desc>${desc}</p>${projectGallery(id)}${ch(tags)}<div class=project-links><a href="${url}" target=_blank rel=noopener>View project ↗</a></div></article>`;
+const certGallery=()=>`<div class=cert-grid>${CERTS.map((c,i)=>`<button class=cert-card type=button data-gallery-kind=certificates data-index="${i}" aria-label="View certificate: ${c.name}"><img loading=lazy decoding=async fetchpriority=low src="${encodeURI(c.thumb)}" alt="${c.name}"/><span>${c.name}</span></button>`).join('')}</div>`;
+const CP='<svg class=cy viewBox="0 0 24 24"><rect x=9 y=9 width=11 height=11 rx=2 /><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg><svg class=ck viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+const rw=(l,t,h,c)=>`<div class=row><span class=m>${l}</span><a href="${h}" target=_blank rel=noopener>${t}</a><button class=cp data-c="${c}" aria-label="Copy ${l}">${CP}</button></div>`;
+const AGE=(()=>{const p=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Kolkata',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()).map(x=>[x.type,x.value]));return +p.year-2006-((+p.month<7||(+p.month===7&&+p.day<20))?1:0)})();
+const S=[
+[0,`<p class=m>Portfolio</p><h1>Utkarsh<br>Yadav</h1><p class=lede>Student developer working on AI, data science, Linux and desktop software.</p>`,
+`<p class=lede>I build lightweight, functional, high-performance software that solves practical problems: complex ideas turned into tools with clean architecture and real operational use.</p><p class=m>Open to collaborations, internships and technical conversations.</p><svg class=cue viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>`],
+[1,`<p class=m>About</p><h2><span>${AGE}</span>-year-old developer from Uttar Pradesh, India.</h2><p>I study Applied AI &amp; Data Science at IIT Jodhpur, where I turn everyday problems into lightweight, dependable software.</p>`,
+`<p class=m>Curiosity</p><h3>What pulls me in</h3>${ul(['Solving everyday problems at system level before reaching for another app','Data-driven tools that turn scattered information into clear decisions','Lightweight desktop apps that stay functional, fast, and dependable','Terminal workflows, Linux internals, and useful automation','Experimenting with AI models and finding practical uses for them','Getting more from agentic tools to explore, build, and iterate'])}`],
+[2,`<p class=m>Education · IIT Jodhpur</p><h2>BS in Applied AI &amp; Data Science</h2><p>2024–2028 · India</p><div class=big>8.60<small>CGPA</small></div><p class=m>52 credits earned · most recent SGPA 8.75</p>`,
+`<p class=m>Academic record</p><h3>Core coursework · 2025–26</h3><div class=semester-grid><article class=semester-card><div class=semester-head><h3>Semester 2</h3><span>SGPA 8.75</span></div><ul class=course-list><li><strong>A−</strong>Introduction to Databases</li><li><strong>B</strong>Machine Learning I</li><li><strong>A−</strong>Programming for Data Science</li><li><strong>A−</strong>Operating Systems</li></ul><p>20 credits · cumulative 52 · CGPA 8.60</p></article><article class=semester-card><div class=semester-head><h3>Semester 1</h3><span>SGPA 8.50</span></div><ul class=course-list><li><strong>A−</strong>Numerical Optimization</li><li><strong>C</strong>Foundations of AI</li><li><strong>A</strong>Visualization &amp; Storytelling with Data</li><li><strong>A−</strong>Pattern Recognition Principles</li></ul><p>20 credits · cumulative 32 · CGPA 8.50</p></article></div>`],
+[2,`<p class=m>Academic record · 2024–25</p><h2>Foundations for applied AI</h2><div class=semester-card><div class=semester-head><h3>Semester 2</h3><span>SGPA 8.50</span></div><ul class=course-list><li><strong>A−</strong>Linear Algebra &amp; Numerical Analysis</li><li><strong>B</strong>Foundations of Statistics &amp; Probability</li><li><strong>A−</strong>Algorithmic Thinking &amp; Applications</li><li><strong>B</strong>Basics of Data Analytics</li></ul><p>12 credits earned · cumulative 12 · CGPA 8.50</p></div>`,
+`<p class=m>Current semester</p><h2>Building on the foundations</h2><p>Current coursework combines software engineering with advanced data and AI methods.</p>${ul(['Object-Oriented Programming in Java','Introduction to Web Technologies · HTML, CSS, JavaScript','Advanced Machine Learning','Basics of Data Mining'],4)}`],
+[3,`<p class=m>Skills</p><h2>Tools I work with</h2><div class=skill-groups>${gp('Software and systems',['Python','JavaScript','SQL','SQLite','Node.js','Linux','Git'])}${gp('Data and AI',['Pandas','NumPy','Scikit-learn','LLM and API integration'])}</div>`,
+`<p class=m>How I build</p><h2>Practical, agent-assisted engineering</h2><div class=skill-groups>${gp('Desktop and platforms',['PyWebView','Kivy','WebKit2GTK','GNOME / GJS'])}${gp('Agentic tools',['Claude Code','OpenCode','Codex','Harness','Cursor','Antigravity'])}</div><p class=m>I use agents to explore, plan, implement, and refine; I stay responsible for the architecture and the result.</p>`],
+[4,pj('tinc',1,'Tinc','Wayland-native AI · Espanso, /dev/uinput','A zero-telemetry assistant that turns typed triggers into AI responses inside the focused text field—across browsers, terminals, and IDEs. Kernel-level input injection avoids desktop permission popups; clipboard context, web-search variants, and a localhost control panel make the workflow configurable.',['Python','Wayland / EVDEV','Espanso','Gemini → Groq'],GH+'/tinc'),
+pj('syncer',2,'Syncer','Shared music · browser and Linux audio','Lets a group share YouTube Music playback through remote controls, a common queue, and live audio streaming. The project connects a browser extension to a Linux audio bridge and coordinates session roles.',['Browser extension','WebSockets','Linux audio'],GH+'/Syncer')],
+[4,pj('querii',3,'Querii','Local SQL analysis · Python, SQLite','Turns CSV and Excel files into a local query workspace: inspect data, build SQL visually, and analyse files without managing an external database server. A desktop WebKit interface connects the query builder to the Python engine.',['Python','SQLite','SQL AST','PyWebView'],GH+'/querii'),
+pj('datamaster',4,'DataMaster','Student data · Excel, SQLite, CLI','Replaces repeated spreadsheet cleanup with a local-first pipeline that watches Excel files, syncs records into SQLite and JSON profiles, and keeps recoverable snapshots before changes. A CLI makes validation and targeted exports repeatable.',['Python','SQLite','Excel sync','CLI'],GH+'/datamaster')],
+[4,pj('attendance',5,'Attendance Processor Pro','Attendance and payroll · PyWebView, SQLite','Translates raw punch records into schedule-aware attendance and pay reports. Minute-level salary calculations, retroactive shift rules, and a visual SQL filter builder address the edge cases that make manual payroll review slow and error-prone.',['Python','SQLite','PyWebView','SQL AST'],GH+'/Employee_nightmare'),
+pj('compressor',6,'OnlyImageCompressorYouNeed','Batch image compression · desktop and Android','Makes oversized image folders practical to share: set a target file-size range and resolution cap, then get the closest valid output when an exact size is not possible. One compression engine serves desktop and Android interfaces.',['Python','Pillow','PyWebView','Kivy'],GH+'/OnlyImgCompressorYouNeed')],
+[4,pj('habitshaper',7,'HabitShaper','Personal productivity · GNOME Shell','Makes daily routines easier to review by pairing a simple task log with a week view and a clear record of consistency. The extension keeps the workflow close to the desktop instead of adding another full-size app.',['JavaScript','GNOME Shell','Task tracking'],GH+'/HabitShaper'),
+pj('taskman',8,'TaskMan','Calendar tasks and reminders · GNOME','Brings dated tasks and timed reminders into the GNOME panel, with a calendar heat map for seeing workload at a glance and snooze or dismiss actions for notifications.',['JavaScript','GJS','GNOME Shell'],GH+'/TaskMan')],
+[4,pj('pdf_oops',9,'PDF_OOPS','PDF and image toolkit · Python','Combines image-to-PDF assembly with practical PDF operations—compress, split, merge, and extract—behind a guided CLI. Text-preserving compression keeps documents searchable when shrinking the file matters.',['Python','PyMuPDF','Pillow','CLI'],GH+'/PDF_OOPS'),
+pj('htm2pdf',10,'Htm2pdf','HTML to PDF · Python, Chromium','Converts HTML into continuous or paginated PDFs, with custom page breaks and layout-aware scaling for A4 output. The updated script also handles paired text-and-figure layouts for documents that need deliberate composition.',['Python','Selenium','Chromium','PDF'],GH+'/Htm2pdf')],
+[4,pj('inkstrokes',11,'InkStrokes','Creative practice · drawing progress','Makes gradual changes in drawing technique easier to see by keeping creative work and feedback together over time. The project treats practice as an evolving body of work rather than a set of disconnected sketches.',['JavaScript','Progress tracking','AI feedback'],GH+'/InkStrokes'),
+pj('applied-ai-notes',12,'Applied AI Notes','Course notes · Applied AI and Data Science','Organizes course concepts into a searchable study reference, connecting the mathematics and methods behind AI topics to concise explanations that are useful during revision and project work.',['Applied AI','Data Science','Learning tools'],GH+'/applied-ai-notes')],
+[5,`<p class=m>Certificates</p><h2>Learning in practice</h2>${certGallery()}`,`<p class=m>Experience</p><h2>Events and operations</h2><div class=experience-list><article class=experience-item><h3>Hackathons</h3><p>CU AI Hackathon · CIT Chennai RANE Hackathon</p></article><article class=experience-item><h3>AI &amp; Data Science workshop</h3><p>Workshop participation alongside ongoing Applied AI and Data Science study.</p></article><article class=experience-item><h3>School administration and systems</h3><p>Currently serving as <strong class=experience-highlight>Administrator of the School Administrative Block</strong>, building and managing ERP workflows and supporting its infrastructure from the ground up.</p></article></div>`],
+[6,`<p class=m>Contact</p><h2>Let's build something useful.</h2><p>I'm open to collaborations, internships and technical conversations. Email is the quickest way to reach me.</p>`,
+rw('Email','utkarshy.work@gmail.com','mailto:utkarshy.work@gmail.com','utkarshy.work@gmail.com')+rw('GitHub','github.com/utkarsh-brainstorm',GH,GH)+rw('LinkedIn','linkedin.com/in/utkarsh-rwx','https://linkedin.com/in/utkarsh-rwx','https://linkedin.com/in/utkarsh-rwx')]
+];
+const $=s=>document.querySelector(s),N=S.length,Lt=$('.L .track'),Rt=$('.R .track'),nav=$('nav'),root=document.documentElement;
+const start=[],cnt=SEC.map(()=>0);S.forEach((s,i)=>{if(cnt[s[0]]++===0)start[s[0]]=i});
+const mk=(t,h,f,isProject)=>{const e=document.createElement('section');e.className='sp'+(isProject?' project-sp':'');e.innerHTML=`<div class=c>${h}</div><i class=fo>${String(f).padStart(2,'0')}</i>`;t.append(e);return e};
+const Ls=S.map((s,i)=>mk(Lt,s[1],2*i+1,s[0]===4)),Rs=S.map((s,i)=>mk(Rt,s[2],2*i+2,s[0]===4)),all=[...Ls,...Rs];
+const D=SEC.map((s,i)=>{const b=document.createElement('button');b.className='dial-item';b.setAttribute('aria-label',s[1]);b.setAttribute('data-key',s[0]);b.setAttribute('role','tab');b.setAttribute('aria-selected','false');b.tabIndex=-1;
+b.innerHTML=`<svg class=dial-svg viewBox="0 0 64 64" aria-hidden="true"><g class=dial-ticks></g><circle class=dial-ring-indicator cx=32 cy=32 r=29></circle></svg><svg class=dial-icon viewBox="0 0 24 24" aria-hidden="true"><path d="${s[3]}"/></svg><span class=dial-tooltip>${String(i+1).padStart(2,'0')} · ${s[1]}</span>`;
+const ticks=b.querySelector('.dial-ticks');ticks.replaceChildren(...Array.from({length:36},(_,k)=>{const a=k*Math.PI/18,inner=k%9===0?24:26.5,outer=29.5,line=document.createElementNS('http://www.w3.org/2000/svg','line');line.setAttribute('x1',32+inner*Math.sin(a));line.setAttribute('y1',32-inner*Math.cos(a));line.setAttribute('x2',32+outer*Math.sin(a));line.setAttribute('y2',32-outer*Math.cos(a));return line}));
+b.arc=b.querySelector('.dial-ring-indicator');b.tk=ticks;b.addEventListener('click',()=>go(start[i],undefined,'direct'));nav.append(b);return b});
+let pos=0,cur=0,ca=-1,sz=0,V=true,anim=null;
+const mq=matchMedia('(min-width:900px)'),rm=matchMedia('(prefers-reduced-motion:reduce)'),cl01=x=>Math.max(0,Math.min(1,x));
+function render(){
+const m=V?'translateY':'translateX',rx=V?'rotateX':'rotateY';
+Lt.style.transform=`${m}(${-pos*sz}px)`;Rt.style.transform=`${m}(${-(N-1-pos)*sz}px)`;
+for(let i=0;i<N;i++){const d=Math.max(-1,Math.min(1,i-pos)),a=Math.abs(d);
+[Ls[i],Rs[i]].forEach((e,j)=>{e.style.transform=a<.002||rm.matches?'':`perspective(1400px) ${rx}(${(j?-1:1)*d*12}deg)`;e.style.opacity=a<.002?1:1-a*.9})}
+}
+const dialFor=section=>SEC.findIndex((_,s)=>section>=start[s]&&section<start[s]+cnt[s]);
+function animateDials(prevSection,nextSection,mode='direct'){
+const previous=dialFor(prevSection),active=dialFor(nextSection);ca=active;
+D.forEach((dial,index)=>{const on=index===active,progress=on?cl01((nextSection-start[index]+1)/cnt[index]):0;
+dial.arc.style.strokeDashoffset=String(182.2*(1-progress));dial.tk.style.transform=`rotate(${progress*360}deg)`;
+dial.classList.toggle('is-active',on);dial.setAttribute('aria-selected',String(on));dial.tabIndex=on?0:-1;
+if(on&&(index!==previous||mode==='direct')){dial.classList.remove('pulse');void dial.offsetWidth;dial.classList.add('pulse')}
+});
+}
+function layout(){V=mq.matches;const r=Lt.parentNode.getBoundingClientRect();root.style.setProperty('--sh',r.height+'px');root.style.setProperty('--sw',r.width+'px');sz=V?r.height:r.width;render()}
+function settle(){const s=S[cur][0],k=cur-start[s]+1;all.forEach((e,i)=>{const on=i%N===cur;e.inert=!on;e.classList.toggle('in',on)});
+history.replaceState(null,'','#'+SEC[s][0]+'-'+k);$('.sr').textContent=SEC[s][1]+', '+k+' of '+cnt[s];if(cur>0)$('.cue')?.classList.add('gone')}
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2,busy=()=>anim&&anim.t<.8;
+function go(to,dur,mode='direct'){to=Math.max(0,Math.min(N-1,Math.round(to)));if(anim)cancelAnimationFrame(anim.id);anim=null;
+const from=pos;if(to===cur&&from===to)return;animateDials(Math.round(from),to,mode);
+cur=to;all.forEach(e=>e.classList.remove('in'));
+const d=rm.matches?1:dur||Math.min(1500,600+120*Math.abs(to-from)),t0=performance.now(),a=anim={t:0};
+(function f(now){const t=Math.min(1,(now-t0)/d);a.t=t;pos=from+(to-from)*ease(t);render();if(t<1)a.id=requestAnimationFrame(f);else{anim=null;settle()}})(t0)}
+const step=d=>{if(!busy())go(cur+d,undefined,d>0?'forward':'backward')};
+/* wheel: one gesture = one step; trackpad inertia is absorbed */
+let acc=0,lt=0,la=0,armed=true;
+addEventListener('wheel',e=>{e.preventDefault();const now=performance.now(),d=e.deltaMode===1?e.deltaY*32:e.deltaY,ab=Math.abs(d),gap=now-lt;lt=now;
+if(gap>140)armed=true;if(ab>la*1.6&&ab>20)armed=true;la=ab;if(gap>200)acc=0;
+if(!viewer.hidden){if(armed&&ab>12){showViewerImage(viewerIndex+(d>0?1:-1));armed=false}return}
+if(!armed||busy())return;acc+=d;if(Math.abs(acc)>40){step(acc>0?1:-1);armed=false;acc=0}},{passive:false});
+let tx,ty,tn,tv;
+addEventListener('touchstart',e=>{tn=!!e.target.closest('nav');tv=!!e.target.closest('#image-viewer')&&!$('#image-viewer').hidden;tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchend',e=>{if(tn)return;const t=e.changedTouches[0],dx=tx-t.clientX,dy=ty-t.clientY,d=Math.abs(dy)>=Math.abs(dx)?dy:dx;if(tv){if(Math.abs(dx)>50)showViewerImage(dx>0?viewerIndex+1:viewerIndex-1);return}if(Math.abs(d)>50)step(d>0?1:-1)},{passive:true});
+addEventListener('keydown',e=>{const k=e.key;if(!$('#image-viewer')?.hidden)return;if(e.target.closest('a,button')&&(k===' '||k==='Enter'))return;
+if(k==='ArrowDown'||k==='PageDown'||(k===' '&&!e.shiftKey))step(1);else if(k==='ArrowUp'||k==='PageUp'||(k===' '&&e.shiftKey))step(-1);else if(k==='Home')go(0);else if(k==='End')go(N-1);else return;e.preventDefault()});
+/* Match the reference dial controls: native button activation plus section jumps. */
+document.addEventListener('click',e=>{const b=e.target.closest('.cp');if(!b)return;navigator.clipboard?.writeText(b.dataset.c).then(()=>{b.classList.add('ok');setTimeout(()=>b.classList.remove('ok'),1500)}).catch(()=>{})});
+const viewer=$('#image-viewer'),viewerImage=$('#image-viewer-image'),viewerName=$('#image-viewer-name'),viewerDownload=$('#image-viewer-download'),viewerCount=$('#image-viewer-count'),viewerCaption=$('#image-viewer-caption');let viewerReturn=null,viewerItems=[],viewerIndex=0;
+function showViewerImage(index){if(!viewerItems.length)return;viewerIndex=(index+viewerItems.length)%viewerItems.length;const item=viewerItems[viewerIndex];viewerImage.src=encodeURI(item.file);viewerImage.alt=item.name||item.caption;viewerName.textContent=item.title;viewerCount.textContent=`${viewerIndex+1} / ${viewerItems.length}`;viewerCaption.textContent=item.caption;viewerDownload.href=encodeURI(item.file);viewerDownload.download=decodeURIComponent(item.file.split('/').pop())}
+function openViewer(items,index){viewerReturn=document.activeElement;viewerItems=items;showViewerImage(index);viewer.hidden=false;viewer.querySelector('.image-viewer-close').focus()}
+function closeImage(){viewer.hidden=true;viewerImage.removeAttribute('src');viewerItems=[];viewerReturn?.focus()}
+function openProjectGallery(id,index){const images=PROJECT_MEDIA[id.toUpperCase()]||PROJECT_MEDIA[id]||[],title=projectTitles[id]||id;openViewer(images.map(([file],i)=>({file,title,caption:`${title} · Screenshot ${i+1}`})),index)}
+function openCertGallery(index){openViewer(CERTS.map(c=>({file:c.file,title:'Certificates',caption:c.name})),index)}
+document.addEventListener('click',e=>{const trigger=e.target.closest('[data-gallery-kind]');if(trigger){trigger.dataset.galleryKind==='certificates'?openCertGallery(+trigger.dataset.index):openProjectGallery(trigger.dataset.galleryId,+trigger.dataset.index);return}if(e.target.closest('[data-viewer-prev]')){showViewerImage(viewerIndex-1);return}if(e.target.closest('[data-viewer-next]')){showViewerImage(viewerIndex+1);return}if(e.target.closest('[data-viewer-close]'))closeImage()});
+addEventListener('keydown',e=>{if(viewer.hidden)return;if(e.key==='Escape'){closeImage();e.stopPropagation()}else if(e.key==='ArrowLeft'){showViewerImage(viewerIndex-1);e.preventDefault()}else if(e.key==='ArrowRight'){showViewerImage(viewerIndex+1);e.preventDefault()}});
+addEventListener('resize',layout);
+const h=location.hash.slice(1).split('-'),hs=SEC.findIndex(s=>s[0]===h[0]);
+if(hs>=0)pos=cur=Math.max(0,Math.min(cnt[hs]-1,(+h[1]||1)-1))+start[hs];
+animateDials(cur,cur,'initial');layout();settle();
+</script></body></html>
